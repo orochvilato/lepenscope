@@ -90,10 +90,10 @@ for (i = 0; i < circo.length; i++) {
 <script type="text/javascript">
   $(document).ready(function() {
     // create an array with nodes
-    var nodes = [{"shape": "box", "id": 11, "label": "Catholique\nint\u00e9griste"}, {"shape": "box", "id": 1, "label": "Souverainiste\n"}, {"shape": "box", "id": 8, "label": "Identitaire\n"}, {"shape": "circle", "id": 6, "label": "Jean-Marie\nLe Pen"}, {"shape": "circle", "id": 9, "label": "Florian\nPhilippot"}, {"shape": "circle", "id": 5, "label": "Nicolas\nDupont-Aignan"}, {"shape": "circle", "id": 13, "label": "Robert\nM\u00e9nard"}, {"shape": "circle", "id": 17, "label": "St\u00e9phane\nRavier"}, {"shape": "circle", "id": 20, "label": "Jean-Fran\u00e7ois\nJalkh"}, {"shape": "circle", "id": 14, "label": "Gilbert\nCollard"}, {"shape": "circle", "id": 2, "label": "Marine\nLe Pen"}, {"shape": "circle", "id": 15, "label": "Jacques\nBompard"}, {"shape": "circle", "id": 19, "label": "Marie-Christine\nArnautu"}, {"shape": "circle", "id": 25, "label": "Bruno\nM\u00e9gret"}, {"shape": "circle", "id": 21, "label": "Steeve\nBriois"}, {"shape": "circle", "id": 12, "label": "Yvan\nBenedetti"}, {"shape": "circle", "id": 23, "label": "Nicolas\nBay"}, {"shape": "circle", "id": 22, "label": "Wallerand\nde Saint-Just"}, {"shape": "circle", "id": 18, "label": "Louis\nAliot"}, {"shape": "circle", "id": 16, "label": "David\nRachline"}, {"shape": "circle", "id": 7, "label": "Marion\nMar\u00e9chal-Le Pen"}, {"shape": "circle", "id": 3, "label": "Front\nNational"}, {"shape": "circle", "id": 4, "label": "Rassemblement\nBleu Marine"}, {"shape": "circle", "id": 24, "label": "Philippe\nde Villiers"}, {"shape": "circle", "id": 10, "label": "Bruno\nGolnisch"}];
+    var nodes = [{"color": "#414141", "shape": "circle", "id": 5, "widthConstraint": {"minimum": 150}, "label": "Jean-Marie\nLe\nPen"}, {"color": "#374682", "shape": "circle", "id": 7, "label": "Florian\nPhilippot"}, {"color": "#414141", "shape": "circle", "id": 4, "widthConstraint": {"minimum": 150}, "label": "Nicolas\nDupont-Aignan"}, {"color": "#915537", "shape": "circle", "id": 10, "label": "Robert\nM\u00e9nard"}, {"color": "#915537", "shape": "circle", "id": 14, "label": "St\u00e9phane\nRavier"}, {"color": "#915537", "shape": "circle", "id": 17, "label": "Jean-Fran\u00e7ois\nJalkh"}, {"color": "#374682", "shape": "circle", "id": 11, "label": "Gilbert\nCollard"}, {"color": "#374682", "shape": "circle", "id": 1, "label": "Marine\nLe\nPen"}, {"color": "#915537", "shape": "circle", "id": 12, "label": "Jacques\nBompard"}, {"color": "#913773", "shape": "circle", "id": 16, "label": "Marie-Christine\nArnautu"}, {"color": "#915537", "shape": "circle", "id": 22, "label": "Bruno\nM\u00e9gret"}, {"color": "#374682", "shape": "circle", "id": 18, "label": "Steeve\nBriois"}, {"color": "#913773", "shape": "circle", "id": 9, "label": "Yvan\nBenedetti"}, {"color": "#374682", "shape": "circle", "id": 20, "label": "Nicolas\nBay"}, {"color": "#374682", "shape": "circle", "id": 19, "label": "Wallerand\nde\nSaint-Just"}, {"color": "#374682", "shape": "circle", "id": 15, "label": "Louis\nAliot"}, {"color": "#915537", "shape": "circle", "id": 13, "label": "David\nRachline"}, {"color": "#414141", "shape": "circle", "id": 6, "widthConstraint": {"minimum": 150}, "label": "Marion\nMar\u00e9chal-Le\nPen"}, {"color": "#414141", "shape": "circle", "id": 2, "widthConstraint": {"minimum": 150}, "label": "Front\nNational"}, {"color": "#414141", "shape": "circle", "id": 3, "widthConstraint": {"minimum": 150}, "label": "Rassemblement\nBleu\nMarine"}, {"color": "#374682", "shape": "circle", "id": 21, "label": "Philippe\nde\nVilliers"}, {"color": "#915537", "shape": "circle", "id": 8, "label": "Bruno\nGolnisch"}];
 
     // create an array with edges
-    var edges = [{"to": 1, "from": 2}, {"to": 8, "from": 7}, {"to": 8, "from": 6}, {"to": 1, "from": 9}, {"to": 1, "from": 5}, {"to": 8, "from": 10}, {"to": 11, "from": 12}, {"to": 8, "from": 13}, {"to": 1, "from": 14}, {"to": 8, "from": 15}, {"to": 8, "from": 16}, {"to": 8, "from": 17}, {"to": 1, "from": 18}, {"to": 11, "from": 19}, {"to": 8, "from": 20}, {"to": 1, "from": 21}, {"to": 1, "from": 22}, {"to": 1, "from": 23}, {"to": 1, "from": 24}, {"to": 8, "from": 25}, {"to": 3, "from": 2, "label": "Pr\u00e9sidente"}, {"to": 4, "from": 2, "label": "Pr\u00e9sidente"}, {"to": 5, "from": 2, "label": "Soutien lors du deuxi\u00e8me tour des Pr\u00e9sidentielles 2017"}, {"to": 6, "from": 2, "label": "Fille"}, {"to": 7, "from": 2, "label": "Tante"}];
+    var edges = [{"to": 2, "from": 1, "label": "Pr\u00e9sidente"}, {"to": 3, "from": 1, "label": "Pr\u00e9sidente"}, {"to": 4, "from": 1, "label": "Soutien lors du deuxi\u00e8me tour des Pr\u00e9sidentielles 2017"}, {"to": 5, "from": 1, "label": "Fille"}, {"to": 6, "from": 1, "label": "Tante"}];
 
     // create a network
     var container = document.getElementById('mynetwork');
@@ -101,7 +101,71 @@ for (i = 0; i < circo.length; i++) {
       nodes: nodes,
       edges: edges
     };
-    var options = {};
+    var options = {
+      edges: {
+        font: {
+          size: 12
+        }
+      },
+      nodes: {
+        shadow:true,
+        shape: 'circle',
+        widthConstraint: {
+          minimum: 100
+        },
+        font: {
+          size: 16,
+          face: 'roboto',
+          bold: 'true',
+          color: '#FFFFFF'
+        }
+      },
+      physics:{
+        enabled: true,
+        barnesHut: {
+          gravitationalConstant: -2000,
+          centralGravity: 0.3,
+          springLength: 95,
+          springConstant: 0.04,
+          damping: 0.09,
+          avoidOverlap: 1
+        },
+        forceAtlas2Based: {
+          gravitationalConstant: -50,
+          centralGravity: 0.01,
+          springConstant: 0.08,
+          springLength: 100,
+          damping: 0.4,
+          avoidOverlap: 0
+        },
+        repulsion: {
+          centralGravity: 0.2,
+          springLength: 200,
+          springConstant: 0.05,
+          nodeDistance: 100,
+          damping: 0.09
+        },
+        hierarchicalRepulsion: {
+          centralGravity: 0.0,
+          springLength: 100,
+          springConstant: 0.01,
+          nodeDistance: 120,
+          damping: 0.09
+        },
+        maxVelocity: 50,
+        minVelocity: 0.1,
+        solver: 'barnesHut',
+        stabilization: {
+          enabled: true,
+          iterations: 1000,
+          updateInterval: 100,
+          onlyDynamicEdges: false,
+          fit: true
+        },
+        timestep: 0.5,
+        adaptiveTimestep: true
+      }
+    };
     var network = new vis.Network(container, data, options);
   })
 

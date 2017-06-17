@@ -11,7 +11,12 @@ import csv
 from cStringIO import StringIO
 f = StringIO(response.content)
 reader = csv.reader(f,delimiter=',',quotechar='"')
-categories = {}
+couleurs = {
+    'Souverainiste':'#374682',
+    'Identitaire':'#915537',
+    'Catholique intégriste': '#913773'
+}
+couleur_autres = '#414141'
 personnes = {}
 liens = []
 ppliens = []
@@ -19,26 +24,18 @@ id = 1
 for i,row in enumerate(reader):
     if i<2:
         continue
-    if not row[0] in categories.keys():
-        s = row[0].split(' ')
-        label = s[0] + '\n' + ' '.join(s[1:])
-        categories[row[0]] = {'id':id, 'label':label, 'shape':'box'}
-        catid = id
-        id += 1
-    else:
-        catid = categories[row[0]]['id']
+
     if not row[1] in personnes.keys():
         s = row[1].split(' ')
         label = s[0] + '\n' + ' '.join(s[1:])
+        label = '\n'.join(s)
 
-        personnes[row[1]] = {'id':id, 'label':label, 'shape':'circle'}
+        personnes[row[1]] = {'id':id, 'label':label, 'shape':'circle','color':couleurs[row[0]]}
         persid = id
         id += 1
     else:
         persid = personnes[row[1]]['id']
-    liens.append({'from':persid,'to':catid})
-    print row
-    print {'from':persid,'to':catid}
+
     if row[10]:
         pl = row[10].split('\n')
         pldesc = row[11].split('\n')
@@ -47,7 +44,13 @@ for i,row in enumerate(reader):
             if not pl[i] in personnes.keys():
                 s = pl[i].split(' ')
                 label = s[0] + '\n' + ' '.join(s[1:])
-                personnes[pl[i]] = {'id':id, 'label':label,'shape':'circle'}
+                label = '\n'.join(s)
+                personnes[pl[i]] = {'id':id,
+                                    'label':label,
+                                    'shape':'circle',
+                                    'color':couleur_autres,
+                                    'widthConstraint': {'minimum': 150 }
+                                    }
                 id += 1
 
             ppliens.append({'from':row[1],'to':pl[i],'label':pldesc[i]})
@@ -55,7 +58,7 @@ for i,row in enumerate(reader):
 
 
 import json
-nodes = json.dumps(categories.values() + personnes.values())
+nodes = json.dumps(personnes.values())
 
 liens = liens + [ {'from':personnes[l['from']]['id'], 'to':personnes[l['to']]['id'],'label':l['label']} for l in ppliens]
 edges = json.dumps(liens)
