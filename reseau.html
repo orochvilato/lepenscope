@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>Lepenscope</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="" sizes="32x32">
+
+  <!-- CSS  -->
+  <style>
+    #logo {
+      padding-left:30px;
+    }
+  </style>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.20.0/vis.min.css">
+
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+  <nav class="indigo darken-4" role="navigation" style="margin-bottom:60px;">
+    <div class="nav-wrapper">
+    <a href="#" id="logo" class="brand-logo">Lepenscope</a>
+      <ul class="right hide-on-med-and-down">
+        <!--<li><a href="">Candidats</a></li>
+        <li><a href="stats.html">Palmarès</a></li>
+        <li><a href="todos.html">A tagger</a></li>-->
+      </ul>
+    </div>
+  </nav>
+</head>
+<body>
+  <div class="container2">
+  <div class="row">
+    <div class="col s12">
+      
+<style>
+  #mynetwork {
+    height: 90vh;
+  }
+</style>
+<div class="row" style="display:none;">
+  <div class="input-field col s6">
+    <input id="search" type="text" onkeyup="search()" class="validate">
+    <label for="search">Recherche</label>
+  </div>
+</div>
+<div class="row">
+  <div class="col s12">
+    <div id="mynetwork"></div>
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</div>
+</body>
+<footer class="page-footer">
+  <!--  Scripts-->
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.20.0/vis.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  
+<script>
+function search() {
+// Declare variables
+var input, filter, table, tr, td, i;
+input = document.getElementById("search");
+filter = input.value.toUpperCase();
+circo = document.getElementsByClassName("circo");
+
+// Loop through all table rows, and hide those who don't match the search query
+for (i = 0; i < circo.length; i++) {
+  if (circo[i].getAttribute('search').toUpperCase().indexOf(filter) == -1) {
+    circo[i].style.display = "none";
+  } else {
+    circo[i].style.display = "";
+  }
+}
+}
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    // create an array with nodes
+    var nodes = [{"shape": "box", "id": 11, "label": "Catholique\nint\u00e9griste"}, {"shape": "box", "id": 1, "label": "Souverainiste\n"}, {"shape": "box", "id": 8, "label": "Identitaire\n"}, {"shape": "circle", "id": 6, "label": "Jean-Marie\nLe Pen"}, {"shape": "circle", "id": 9, "label": "Florian\nPhilippot"}, {"shape": "circle", "id": 5, "label": "Nicolas\nDupont-Aignan"}, {"shape": "circle", "id": 13, "label": "Robert\nM\u00e9nard"}, {"shape": "circle", "id": 17, "label": "St\u00e9phane\nRavier"}, {"shape": "circle", "id": 20, "label": "Jean-Fran\u00e7ois\nJalkh"}, {"shape": "circle", "id": 14, "label": "Gilbert\nCollard"}, {"shape": "circle", "id": 2, "label": "Marine\nLe Pen"}, {"shape": "circle", "id": 15, "label": "Jacques\nBompard"}, {"shape": "circle", "id": 19, "label": "Marie-Christine\nArnautu"}, {"shape": "circle", "id": 25, "label": "Bruno\nM\u00e9gret"}, {"shape": "circle", "id": 21, "label": "Steeve\nBriois"}, {"shape": "circle", "id": 12, "label": "Yvan\nBenedetti"}, {"shape": "circle", "id": 23, "label": "Nicolas\nBay"}, {"shape": "circle", "id": 22, "label": "Wallerand\nde Saint-Just"}, {"shape": "circle", "id": 18, "label": "Louis\nAliot"}, {"shape": "circle", "id": 16, "label": "David\nRachline"}, {"shape": "circle", "id": 7, "label": "Marion\nMar\u00e9chal-Le Pen"}, {"shape": "circle", "id": 3, "label": "Front\nNational"}, {"shape": "circle", "id": 4, "label": "Rassemblement\nBleu Marine"}, {"shape": "circle", "id": 24, "label": "Philippe\nde Villiers"}, {"shape": "circle", "id": 10, "label": "Bruno\nGolnisch"}];
+
+    // create an array with edges
+    var edges = [{"to": 1, "from": 2}, {"to": 8, "from": 7}, {"to": 8, "from": 6}, {"to": 1, "from": 9}, {"to": 1, "from": 5}, {"to": 8, "from": 10}, {"to": 11, "from": 12}, {"to": 8, "from": 13}, {"to": 1, "from": 14}, {"to": 8, "from": 15}, {"to": 8, "from": 16}, {"to": 8, "from": 17}, {"to": 1, "from": 18}, {"to": 11, "from": 19}, {"to": 8, "from": 20}, {"to": 1, "from": 21}, {"to": 1, "from": 22}, {"to": 1, "from": 23}, {"to": 1, "from": 24}, {"to": 8, "from": 25}, {"to": 3, "from": 2, "label": "Pr\u00e9sidente"}, {"to": 4, "from": 2, "label": "Pr\u00e9sidente"}, {"to": 5, "from": 2, "label": "Soutien lors du deuxi\u00e8me tour des Pr\u00e9sidentielles 2017"}, {"to": 6, "from": 2, "label": "Fille"}, {"to": 7, "from": 2, "label": "Tante"}];
+
+    // create a network
+    var container = document.getElementById('mynetwork');
+    var data = {
+      nodes: nodes,
+      edges: edges
+    };
+    var options = {};
+    var network = new vis.Network(container, data, options);
+  })
+
+</script>
+
+
+</footer>
+
+</html>

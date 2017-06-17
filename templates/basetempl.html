@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>Lepenscope</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="" sizes="32x32">
+
+  <!-- CSS  -->
+  <style>
+    #logo {
+      padding-left:30px;
+    }
+  </style>
+  {% block head %}
+  {% endblock %}
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+  <nav class="indigo darken-4" role="navigation" style="margin-bottom:60px;">
+    <div class="nav-wrapper">
+    <a href="#" id="logo" class="brand-logo">Lepenscope</a>
+      <ul class="right hide-on-med-and-down">
+        <!--<li><a href="">Candidats</a></li>
+        <li><a href="stats.html">Palmarès</a></li>
+        <li><a href="todos.html">A tagger</a></li>-->
+      </ul>
+    </div>
+  </nav>
+</head>
+<body>
+  <div class="container2">
+  <div class="row">
+    <div class="col s12">
+      {% block body %}
+      {% endblock %}
+    </div>
+  </div>
+</div>
+</body>
+<footer class="page-footer">
+  <!--  Scripts-->
+  {% block footerfirst %}
+  {% endblock %}
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  {% block footer %}
+  {% endblock %}
+</footer>
+
+</html>
