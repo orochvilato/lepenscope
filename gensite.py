@@ -15,11 +15,14 @@ def loadImages():
     for image in images:
         id = re.match(r'photo_([^\.]+).[a-z]+|logo_([^\.]+).[a-z]+',image['name']).groups()
         if id[0]:
-            pics[id[0].encode('utf8')] = image['name']
+            pics[id[0].lower()] = image['name']
         else:
-            pics[id[1].encode('utf8')] = image['name']
-        if image['name'] in loadedimages:
+            pics[id[1].lower()] = image['name']
+
+
+        if image['name'].encode('utf8') in loadedimages:
             continue
+        print "ok"
         r = requests.get('https://drive.google.com/uc?id='+image['id']+'&export=download')
 
 
@@ -28,11 +31,16 @@ def loadImages():
 loadImages()
 candidats = []
 import requests
-response = requests.get('https://docs.google.com/spreadsheets/d/1FFz6SUbp1NzpijHxYXBqMkOdjpui6V5fPP5wp4C7CBU/export?format=csv&id=1FFz6SUbp1NzpijHxYXBqMkOdjpui6V5fPP5wp4C7CBU&gid=0')
-import csv
+response = requests.get('https://docs.google.com/spreadsheets/d/1FFz6SUbp1NzpijHxYXBqMkOdjpui6V5fPP5wp4C7CBU/export?format=xlsx&id=1FFz6SUbp1NzpijHxYXBqMkOdjpui6V5fPP5wp4C7CBU')
+from openpyxl import load_workbook
 from cStringIO import StringIO
 f = StringIO(response.content)
-reader = csv.reader(f,delimiter=',',quotechar='"')
+wb = load_workbook(f)
+wsPers = wb[u'Personnalités']
+wsMouv = wb['Mouvements']
+wsLien = wb['Liens']
+print wb.get_sheet_names()
+
 couleurs = {
     'Souverainiste':'#374682',
     'Identitaire':'#915537',
@@ -40,67 +48,53 @@ couleurs = {
 }
 couleur_autres = '#414141'
 personnes = {}
+mouvements = {}
 liens = []
-ppliens = []
 id = 1
-doublons = {}
+def formatLabel(l):
+    s = l.split(' ')
+    label = s[0] + '\n' + ' '.join(s[1:])
+    label = '\n'.join(s)
+    return label
+def getId(n):
+    return n.lower().replace('-','').replace(' ','')
 
-for i,row in enumerate(reader):
+for i,row in enumerate(wsPers.rows):
+    if i<2:
+        continue
+    idname = getId(row[0].value)
+    node = {'id':id, 'label':formatLabel(row[0].value), 'shape':'circle','color':couleurs.get(row[1].value,couleur_autres)}
+    if idname in pics.keys():
+        node.update({'label':row[0].value,'shape':'circularImage','image':'images/'+pics[idname],'borderWidth':8,'size':50, 'font':{'color':'#000'}})
+    personnes[row[0].value] = node
+    id += 1
+
+for i,row in enumerate(wsMouv.rows):
+    if i<2:
+        continue
+    idname = getId(row[0].value)
+    node = {'id':id, 'label':formatLabel(row[0].value), 'shape':'circle','color':couleurs.get(row[1].value,couleur_autres),'widthConstraint':{'minimum':150}}
+    if idname in pics.keys():
+        node.update({'label':row[0].value,'shape':'circularImage','image':'images/'+pics[idname],'borderWidth':8,'size':75, 'font':{'color':'#000'}})
+    mouvements[row[0].value] = node
+    id += 1
+
+nodes = dict(personnes)
+nodes.update(mouvements)
+
+for i,row in enumerate(wsLien.rows):
     if i<2:
         continue
 
-    if 1: #not row[1] in personnes.keys():
-        s = row[1].split(' ')
-        label = s[0] + '\n' + ' '.join(s[1:])
-        label = '\n'.join(s)
-        idname = row[0].lower().replace('-','').replace(' ','')
-        node = {'id':id, 'label':label, 'shape':'circle','color':couleurs.get(row[0],couleur_autres)}
-        if idname in pics.keys():
-            node.update({'shape':'circularImage','image':'images/'+pics[idname]})
-        personnes[row[1]] = node
-
-        persid = id
-        id += 1
-    else:
-        persid = personnes[row[1]]['id']
-
-    if row[10]:
-        pl = row[10].split('\n')
-        pldesc = row[11].split('\n')
-        for i in range(len(pl)):
-            if not pl[i] in personnes.keys():
-                s = pl[i].split(' ')
-                label = s[0] + '\n' + ' '.join(s[1:])
-                label = '\n'.join(s)
-                idname = row[0].lower().replace('-','').replace(' ','')
-                node = {'id':id,
-                                    'label':label,
-                                    'shape':'circle',
-                                    'color':couleur_autres,
-                                    'widthConstraint': {'minimum': 150 }
-                                    }
-                if idname in pics.keys():
-                    node.update({'shape':'circularImage','image':'images/'+pics[idname]})
-                personnes[pl[i]] = node
-                id += 1
-
-            if (pl[i],row[1]) in doublons.keys():
-                oldlabel = ppliens[doublons[(pl[i],row[1])]]['label']
-                if oldlabel:
-                    ppliens[doublons[(pl[i],row[1])]]['label'] += ' / '
-                ppliens[doublons[(pl[i],row[1])]]['label'] += pldesc[i] if i<len(pldesc) else ""
-            else:
-                doublons[(row[1],pl[i])] = len(ppliens)
-                ppliens.append({'from':row[1],'to':pl[i],'label':pldesc[i] if i<len(pldesc) else ""})
-
-
+    if row[0].value in nodes.keys() and row[1].value in nodes.keys():
+        liens.append({'from':nodes[row[0].value]['id'],'to':nodes[row[1].value]['id'],'label':row[2].value or ""})
 
 
 
 import json
-nodes = json.dumps(personnes.values())
-
-liens = liens + [ {'from':personnes[l['from']]['id'], 'to':personnes[l['to']]['id'],'label':l['label']} for l in ppliens]
+nodes = json.dumps(personnes.values()+mouvements.values())
+#liens = []
+#liens = liens + [ {'from':personnes[l['from']]['id'], 'to':personnes[l['to']]['id'],'label':l['label']} for l in ppliens]
 edges = json.dumps(liens)
 
 
