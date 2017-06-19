@@ -25,7 +25,7 @@ for i,row in enumerate(reader):
     if i<2:
         continue
 
-    if not row[1] in personnes.keys():
+    if 1: #not row[1] in personnes.keys():
         s = row[1].split(' ')
         label = s[0] + '\n' + ' '.join(s[1:])
         label = '\n'.join(s)
