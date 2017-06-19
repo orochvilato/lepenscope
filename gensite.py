@@ -21,6 +21,7 @@ personnes = {}
 liens = []
 ppliens = []
 id = 1
+doublons = {}
 for i,row in enumerate(reader):
     if i<2:
         continue
@@ -51,7 +52,17 @@ for i,row in enumerate(reader):
                                     'widthConstraint': {'minimum': 150 }
                                     }
                 id += 1
-            ppliens.append({'from':row[1],'to':pl[i],'label':pldesc[i] if i<len(pldesc) else ""})
+
+            if (pl[i],row[1]) in doublons.keys():
+                oldlabel = ppliens[doublons[(pl[i],row[1])]]['label']
+                if oldlabel:
+                    ppliens[doublons[(pl[i],row[1])]]['label'] += ' / '
+                ppliens[doublons[(pl[i],row[1])]]['label'] += pldesc[i] if i<len(pldesc) else ""
+            else:
+                doublons[(row[1],pl[i])] = len(ppliens)
+                ppliens.append({'from':row[1],'to':pl[i],'label':pldesc[i] if i<len(pldesc) else ""})
+
+
 
 
 
