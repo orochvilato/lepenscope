@@ -4,6 +4,28 @@ import json
 import jinja2
 import os
 
+APIKEY = 'AIzaSyB-tQmeF1zWos01WfvFykZq07hO6wBNYDU'
+
+pics = {}
+import re
+def loadImages():
+    loadedimages = os.listdir('images/')
+    r = requests.get('https://www.googleapis.com/drive/v3/files?q="0BxG9i5BMTacqRl8yMU9SbW5PY0U"+in+parents&key=%s' % APIKEY)
+    images = json.loads(r.content)['files']
+    for image in images:
+        id = re.match(r'photo_([^\.]+).[a-z]+|logo_([^\.]+).[a-z]+',image['name']).groups()
+        if id[0]:
+            pics[id[0].encode('utf8')] = image['name']
+        else:
+            pics[id[1].encode('utf8')] = image['name']
+        if image['name'] in loadedimages:
+            continue
+        r = requests.get('https://drive.google.com/uc?id='+image['id']+'&export=download')
+
+
+        open('images/%s' % image['name'],'w').write(r.content)
+
+loadImages()
 candidats = []
 import requests
 response = requests.get('https://docs.google.com/spreadsheets/d/1FFz6SUbp1NzpijHxYXBqMkOdjpui6V5fPP5wp4C7CBU/export?format=csv&id=1FFz6SUbp1NzpijHxYXBqMkOdjpui6V5fPP5wp4C7CBU&gid=0')
@@ -22,6 +44,7 @@ liens = []
 ppliens = []
 id = 1
 doublons = {}
+
 for i,row in enumerate(reader):
     if i<2:
         continue
@@ -30,8 +53,12 @@ for i,row in enumerate(reader):
         s = row[1].split(' ')
         label = s[0] + '\n' + ' '.join(s[1:])
         label = '\n'.join(s)
+        idname = row[0].lower().replace('-','').replace(' ','')
+        node = {'id':id, 'label':label, 'shape':'circle','color':couleurs.get(row[0],couleur_autres)}
+        if idname in pics.keys():
+            node.update({'shape':'circularImage','image':'images/'+pics[idname]})
+        personnes[row[1]] = node
 
-        personnes[row[1]] = {'id':id, 'label':label, 'shape':'circle','color':couleurs.get(row[0],couleur_autres)}
         persid = id
         id += 1
     else:
@@ -45,12 +72,16 @@ for i,row in enumerate(reader):
                 s = pl[i].split(' ')
                 label = s[0] + '\n' + ' '.join(s[1:])
                 label = '\n'.join(s)
-                personnes[pl[i]] = {'id':id,
+                idname = row[0].lower().replace('-','').replace(' ','')
+                node = {'id':id,
                                     'label':label,
                                     'shape':'circle',
                                     'color':couleur_autres,
                                     'widthConstraint': {'minimum': 150 }
                                     }
+                if idname in pics.keys():
+                    node.update({'shape':'circularImage','image':'images/'+pics[idname]})
+                personnes[pl[i]] = node
                 id += 1
 
             if (pl[i],row[1]) in doublons.keys():

@@ -1,2 +1,3 @@
 .pyenv
 *.pyc
+client_secret.json
