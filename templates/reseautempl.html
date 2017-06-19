@@ -99,7 +99,7 @@ for (i = 0; i < circo.length; i++) {
           centralGravity: 0.2,
           springLength: 200,
           springConstant: 0.05,
-          nodeDistance: 100,
+          nodeDistance: 150,
           damping: 0.09
         },
         hierarchicalRepulsion: {
@@ -111,7 +111,7 @@ for (i = 0; i < circo.length; i++) {
         },
         maxVelocity: 50,
         minVelocity: 0.1,
-        solver: 'barnesHut',
+        solver: 'forceAtlas2Based',
         stabilization: {
           enabled: true,
           iterations: 1000,

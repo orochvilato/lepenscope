@@ -30,7 +30,7 @@ for i,row in enumerate(reader):
         label = s[0] + '\n' + ' '.join(s[1:])
         label = '\n'.join(s)
 
-        personnes[row[1]] = {'id':id, 'label':label, 'shape':'circle','color':couleurs[row[0]]}
+        personnes[row[1]] = {'id':id, 'label':label, 'shape':'circle','color':couleurs.get(row[0],couleur_autres)}
         persid = id
         id += 1
     else:
@@ -39,7 +39,6 @@ for i,row in enumerate(reader):
     if row[10]:
         pl = row[10].split('\n')
         pldesc = row[11].split('\n')
-
         for i in range(len(pl)):
             if not pl[i] in personnes.keys():
                 s = pl[i].split(' ')
@@ -52,8 +51,7 @@ for i,row in enumerate(reader):
                                     'widthConstraint': {'minimum': 150 }
                                     }
                 id += 1
-
-            ppliens.append({'from':row[1],'to':pl[i],'label':pldesc[i]})
+            ppliens.append({'from':row[1],'to':pl[i],'label':pldesc[i] if i<len(pldesc) else ""})
 
 
 
