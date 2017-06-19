@@ -105,10 +105,10 @@ for (i = 0; i < circo.length; i++) {
       edges: {
         font: {
           size: 12
-        }
+        },
+        width:2
       },
       nodes: {
-        shadow:true,
         shape: 'circle',
         widthConstraint: {
           minimum: 100
@@ -134,15 +134,15 @@ for (i = 0; i < circo.length; i++) {
           gravitationalConstant: -50,
           centralGravity: 0.01,
           springConstant: 0.08,
-          springLength: 100,
+          springLength: 150,
           damping: 0.4,
           avoidOverlap: 0
         },
         repulsion: {
           centralGravity: 0.2,
-          springLength: 200,
+          springLength: 300,
           springConstant: 0.05,
-          nodeDistance: 150,
+          nodeDistance: 200,
           damping: 0.09
         },
         hierarchicalRepulsion: {
@@ -154,11 +154,11 @@ for (i = 0; i < circo.length; i++) {
         },
         maxVelocity: 50,
         minVelocity: 0.1,
-        solver: 'forceAtlas2Based',
+        solver: 'repulsion',
         stabilization: {
           enabled: true,
-          iterations: 1000,
-          updateInterval: 100,
+          iterations: 3000,
+          updateInterval: 200,
           onlyDynamicEdges: false,
           fit: true
         },
