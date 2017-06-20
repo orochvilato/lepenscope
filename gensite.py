@@ -4,13 +4,14 @@ import json
 import jinja2
 import os
 
-APIKEY = 'AIzaSyB-tQmeF1zWos01WfvFykZq07hO6wBNYDU'
+APIKEY = 'AIzaSyAl3tgYstQjvgM0krud4pz-PxCo-CXK3I0'
 
 pics = {}
 import re
 def loadImages():
     loadedimages = os.listdir('images/')
     r = requests.get('https://www.googleapis.com/drive/v3/files?q="0BxG9i5BMTacqRl8yMU9SbW5PY0U"+in+parents&key=%s' % APIKEY)
+    print r.content
     images = json.loads(r.content)['files']
     for image in images:
         id = re.match(r'photo_([^\.]+).[a-z]+|logo_([^\.]+).[a-z]+',image['name']).groups()
