@@ -56,6 +56,11 @@ mouvements = {}
 liens = []
 id = 1
 
+import unicodedata
+def strip_accents(s):
+   return ''.join(c for c in unicodedata.normalize('NFD', s)
+                  if unicodedata.category(c) != 'Mn')
+
 def getId(n):
     return n.lower().replace('-','').replace(' ','')
 
@@ -75,7 +80,7 @@ nodesimages = []
 for i,row in enumerate(wsLege.rows):
     if i<2:
         continue
-    categories.append(dict(nom=row[2].value,couleur=row[0].value))
+    categories.append(dict(id=strip_accents(row[2].value),nom=row[2].value,couleur=row[0].value))
 
 for i,row in enumerate(wsPers.rows):
     if i<2:
@@ -131,4 +136,6 @@ env = Environment(
     autoescape=select_autoescape(['html', 'xml'])
 )
 open('reseau/reseau.cycss','w').write(env.get_template('reseautmpl.cycss').render(categories=categories,nodesimages=nodesimages).encode('utf-8'))
+open('js/lepenscope.js','w').write(env.get_template('lepenscopetmpl.js').render(categories=categories).encode('utf-8'))
+open('index.html','w').write(env.get_template('indextmpl.html').render(categories=categories).encode('utf-8'))
 #open('reseau.html','w').write(env.get_template('reseautempl.html').render(nodes=nodes,edges=edges).encode('utf-8'))

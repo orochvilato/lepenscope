@@ -406,24 +406,9 @@ $(function(){
 
     var personne = $('#personne').is(':checked');
     var mouvement = $('#mouvement').is(':checked');
-    var semiSoft = $('#semi-soft').is(':checked');
-    var na = $('#na').is(':checked');
-    var semiHard = $('#semi-hard').is(':checked');
-    var hard = $('#hard').is(':checked');
-
-    var red = $('#red').is(':checked');
-    var white = $('#white').is(':checked');
-    var cider = $('#cider').is(':checked');
-
-    var england = $('#chs-en').is(':checked');
-    var france = $('#chs-fr').is(':checked');
-    var italy = $('#chs-it').is(':checked');
-    var usa = $('#chs-usa').is(':checked');
-    var spain = $('#chs-es').is(':checked');
-    var switzerland = $('#chs-ch').is(':checked');
-    var euro = $('#chs-euro').is(':checked');
-    var newWorld = $('#chs-nworld').is(':checked');
-    var naCountry = $('#chs-na').is(':checked');
+    var autre = $('#autre').is(':checked');
+    {% for cat in categories %}var {{ cat['id'] }} = $('#{{ cat['id'] }}').is(':checked');
+    {% endfor %}
 
     cy.batch(function(){
 
@@ -436,26 +421,20 @@ $(function(){
           n.addClass('filtered');
         };
         var cType = n.data('type');
-        var cty = n.data('label');
+        var cat = n.data('cat');
         if(
            (cType === 'personne' && !personne)
             || (cType === 'mouvement' && !mouvement)
 
-            // country
-            || (cty === 'England' && !england)
-            || (cty === 'France' && !france)
-            || (cty === 'Italy' && !italy)
-            || (cty === 'US' && !usa)
-            || (cty === 'Spain' && !spain)
-            || (cty === 'Switzerland' && !switzerland)
-            || ( (cty === 'Holland' || cty === 'Ireland' || cty === 'Portugal' || cty === 'Scotland' || cty === 'Wales') && !euro )
-            || ( (cty === 'Canada' || cty === 'Australia') && !newWorld )
-            || (cty === undefined && !naCountry)
+            // categories
+            || (cat === null && !autre)
+            {% for cat in categories %}|| (cat === '{{ cat['nom'] }}' && !{{ cat['id'] }})
+            {% endfor %}
           ){
             filter();
           }
 
-      
+
       });
 
     });

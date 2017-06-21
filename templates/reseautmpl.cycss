@@ -6,7 +6,7 @@ core {
 edge {
 	curve-style: haystack;
 	haystack-radius: 0;
-	opacity: 0.333;
+	opacity: 0.90;
 	width: 2;
 	z-index: 0;
 	overlay-opacity: 0;
@@ -73,14 +73,6 @@ node[NodeType = "WhiteWine"] {
 	height: mapData(Quality, 70, 100, 20, 50);
 }
 
-edge[interaction = "cw"] {
-	line-color: white;
-}
-
-node[NodeType = "RedWine"] {
-	background-color: #DE3128;
-	text-outline-color: #DE3128;
-}
 
 edge[interaction = "cr"] {
 	line-color: #DE3128;

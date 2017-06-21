@@ -69,11 +69,8 @@
       </div>
       <div class="filterset right">
         <div class="filterset-title">Catégories</div>
-        <input id="Souverainiste" type="checkbox" checked></input><label for="Souverainiste">Souverainiste</label><br />
-        <input id="Identitaire" type="checkbox" checked></input><label for="Identitaire">Identitaire</label><br />
-        <input id="Integriste" type="checkbox" checked></input><label for="Integriste">Intégriste</label><br />
-        <input id="Complotiste" type="checkbox" checked></input><label for="Complotiste">Complotiste</label><br />
-        <input id="autre" type="checkbox" checked></input><label for="autre">Autre</label><br />
+        {% for cat in categories %}<input id="{{ cat['id'] }}" type="checkbox" checked></input><label for="{{ cat['id'] }}">{{ cat['nom'] }}</label><br />
+        {% endfor %}<input id="autre" type="checkbox" checked></input><label for="autre">Autre</label><br />
 
       </div>
     </div>
