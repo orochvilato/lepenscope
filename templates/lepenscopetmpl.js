@@ -24,11 +24,11 @@ $(function(){
     type: 'GET',
     dataType: 'text'
   });
-
+  {% raw %}
   var infoTemplate = Handlebars.compile([
     '<p class="ac-name">{{label}}</p>',
   ].join(''));
-
+  {% endraw %}
   // when both graph export json and style loaded, init cy
   Promise.all([ graphP, styleP ]).then(initCy);
 
