@@ -23,7 +23,7 @@ def loadImages():
 
         if image['name'].encode('utf8') in loadedimages:
             continue
-        print "ok"
+
         r = requests.get('https://drive.google.com/uc?id='+image['id']+'&export=download')
 
 
@@ -35,68 +35,85 @@ import requests
 response = requests.get('https://docs.google.com/spreadsheets/d/1FFz6SUbp1NzpijHxYXBqMkOdjpui6V5fPP5wp4C7CBU/export?format=xlsx&id=1FFz6SUbp1NzpijHxYXBqMkOdjpui6V5fPP5wp4C7CBU')
 from openpyxl import load_workbook
 from cStringIO import StringIO
+from textwrap import wrap
+
 f = StringIO(response.content)
 wb = load_workbook(f)
 wsPers = wb[u'Personnalités']
 wsMouv = wb['Mouvements']
 wsLien = wb['Liens']
-print wb.get_sheet_names()
+wsLege = wb[u'Légende']
+
 
 couleurs = {
     'Souverainiste':'#374682',
     'Identitaire':'#915537',
-    'Catholique intégriste': '#913773'
+    'Intégriste': '#913773'
 }
 couleur_autres = '#414141'
 personnes = {}
 mouvements = {}
 liens = []
 id = 1
-def formatLabel(l):
-    s = l.split(' ')
-    label = s[0] + '\n' + ' '.join(s[1:])
-    label = '\n'.join(s)
-    return label
+
 def getId(n):
     return n.lower().replace('-','').replace(' ','')
+
+elements = {'nodes':[],'edges':[]}
+
+nodeWeights = {}
+for i,row in enumerate(wsLien.rows):
+    if i<2:
+        continue
+    nodeWeights[row[0].value] = nodeWeights.get(row[0].value,0) + 1
+    nodeWeights[row[1].value] = nodeWeights.get(row[1].value,0) + 1
+    elements['edges'].append({'data':{'source':row[0].value,'target':row[1].value}})
+
+categories = []
+nodesimages = []
+
+for i,row in enumerate(wsLege.rows):
+    if i<2:
+        continue
+    categories.append(dict(nom=row[2].value,couleur=row[0].value))
 
 for i,row in enumerate(wsPers.rows):
     if i<2:
         continue
     idname = getId(row[0].value)
-    node = {'id':id, 'label':formatLabel(row[0].value), 'shape':'circle','color':couleurs.get(row[1].value,couleur_autres)}
+    node = {'data':
+                {'id':row[0].value,
+                 'label':row[0].value,
+                 'type':'personne',
+                 'cat':row[1].value,
+                 'poids':nodeWeights.get(row[0].value,0)
+                }}
     if idname in pics.keys():
-        node.update({'label':row[0].value,'shape':'circularImage','image':'images/'+pics[idname],'borderWidth':8,'size':50, 'font':{'color':'#000'}})
-    personnes[row[0].value] = node
-    id += 1
+        node['data'].update({'haspic':1})
+        nodesimages.append(dict(id=row[0].value,image='images/'+pics[idname]))
+    elements['nodes'].append(node)
 
 for i,row in enumerate(wsMouv.rows):
     if i<2:
         continue
     idname = getId(row[0].value)
-    node = {'id':id, 'label':formatLabel(row[0].value), 'shape':'circle','color':couleurs.get(row[1].value,couleur_autres),'widthConstraint':{'minimum':150}}
+    node = {'data':
+                {'id':row[0].value,
+                 'label':row[0].value,
+                 'type':'mouvement',
+                 'cat':row[1].value,
+                 'poids':nodeWeights.get(row[0].value,0)
+                }}
     if idname in pics.keys():
-        node.update({'label':row[0].value,'shape':'circularImage','image':'images/'+pics[idname],'borderWidth':8,'size':75, 'font':{'color':'#000'}})
-    mouvements[row[0].value] = node
-    id += 1
+        node['data'].update({'haspic':1})
+        nodesimages.append(dict(id=row[0].value,image='images/'+pics[idname]))
 
-nodes = dict(personnes)
-nodes.update(mouvements)
-
-for i,row in enumerate(wsLien.rows):
-    if i<2:
-        continue
-
-    if row[0].value in nodes.keys() and row[1].value in nodes.keys():
-        liens.append({'from':nodes[row[0].value]['id'],'to':nodes[row[1].value]['id'],'label':row[2].value or ""})
+    elements['nodes'].append(node)
 
 
 
 import json
-nodes = json.dumps(personnes.values()+mouvements.values())
-#liens = []
-#liens = liens + [ {'from':personnes[l['from']]['id'], 'to':personnes[l['to']]['id'],'label':l['label']} for l in ppliens]
-edges = json.dumps(liens)
+open('reseau/reseau.json','w').write(json.dumps({'elements':elements}, indent=4, separators=(',', ': ')))
 
 
 def renderTemplate(tpl_path, **context):
@@ -113,5 +130,5 @@ env = Environment(
     loader=FileSystemLoader('./templates'),
     autoescape=select_autoescape(['html', 'xml'])
 )
-
-open('reseau.html','w').write(env.get_template('reseautempl.html').render(nodes=nodes,edges=edges).encode('utf-8'))
+open('reseau/reseau.cycss','w').write(env.get_template('reseautmpl.cycss').render(categories=categories,nodesimages=nodesimages).encode('utf-8'))
+#open('reseau.html','w').write(env.get_template('reseautempl.html').render(nodes=nodes,edges=edges).encode('utf-8'))

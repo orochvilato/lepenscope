@@ -1,0 +1,735 @@
+{
+    "elements": {
+        "nodes": [
+            {
+                "data": {
+                    "cat": "Souverainiste",
+                    "type": "personne",
+                    "id": "Louis Aliot",
+                    "poids": 1,
+                    "label": "Louis Aliot"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Int\u00e9griste",
+                    "type": "personne",
+                    "id": "Marie-Christine Arnautu",
+                    "poids": 1,
+                    "label": "Marie-Christine Arnautu"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Souverainiste",
+                    "type": "personne",
+                    "id": "Nicolas Bay",
+                    "poids": 2,
+                    "label": "Nicolas Bay"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Int\u00e9griste",
+                    "type": "personne",
+                    "id": "Yvan Benedetti",
+                    "poids": 2,
+                    "label": "Yvan Benedetti"
+                }
+            },
+            {
+                "data": {
+                    "cat": null,
+                    "type": "personne",
+                    "id": "Bruno Bilde",
+                    "poids": 1,
+                    "label": "Bruno Bilde"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Identitaire",
+                    "type": "personne",
+                    "id": "Jacques Bompard",
+                    "poids": 3,
+                    "label": "Jacques Bompard"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Souverainiste",
+                    "type": "personne",
+                    "id": "Steeve Briois",
+                    "poids": 1,
+                    "label": "Steeve Briois"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Identitaire",
+                    "type": "personne",
+                    "id": "Fr\u00e9d\u00e9ric Chatillon",
+                    "poids": 3,
+                    "label": "Fr\u00e9d\u00e9ric Chatillon"
+                }
+            },
+            {
+                "data": {
+                    "cat": null,
+                    "type": "personne",
+                    "id": "S\u00e9bastien Chenu",
+                    "poids": 1,
+                    "label": "S\u00e9bastien Chenu"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Souverainiste",
+                    "type": "personne",
+                    "id": "Gilbert Collard",
+                    "poids": 1,
+                    "label": "Gilbert Collard"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Souverainiste",
+                    "type": "personne",
+                    "id": "Nicolas Dupont-Aignan",
+                    "poids": 2,
+                    "label": "Nicolas Dupont-Aignan"
+                }
+            },
+            {
+                "data": {
+                    "cat": null,
+                    "type": "personne",
+                    "id": "Jos\u00e9 Evrard",
+                    "poids": 1,
+                    "label": "Jos\u00e9 Evrard"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Identitaire",
+                    "type": "personne",
+                    "id": "Bruno Golnisch",
+                    "poids": 2,
+                    "label": "Bruno Golnisch"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Identitaire",
+                    "type": "personne",
+                    "id": "Jean-Fran\u00e7ois Jalkh",
+                    "poids": 1,
+                    "label": "Jean-Fran\u00e7ois Jalkh"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Identitaire",
+                    "type": "personne",
+                    "id": "Jean-Marie Le Pen",
+                    "poids": 6,
+                    "label": "Jean-Marie Le Pen"
+                }
+            },
+            {
+                "data": {
+                    "haspic": 1,
+                    "label": "Marine Le Pen",
+                    "type": "personne",
+                    "id": "Marine Le Pen",
+                    "poids": 7,
+                    "cat": "Souverainiste"
+                }
+            },
+            {
+                "data": {
+                    "haspic": 1,
+                    "label": "Marion Mar\u00e9chal-Le Pen",
+                    "type": "personne",
+                    "id": "Marion Mar\u00e9chal-Le Pen",
+                    "poids": 5,
+                    "cat": "Identitaire"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Identitaire",
+                    "type": "personne",
+                    "id": "Bruno M\u00e9gret",
+                    "poids": 2,
+                    "label": "Bruno M\u00e9gret"
+                }
+            },
+            {
+                "data": {
+                    "cat": null,
+                    "type": "personne",
+                    "id": "Emmanuelle M\u00e9nard",
+                    "poids": 2,
+                    "label": "Emmanuelle M\u00e9nard"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Identitaire",
+                    "type": "personne",
+                    "id": "Robert M\u00e9nard",
+                    "poids": 5,
+                    "label": "Robert M\u00e9nard"
+                }
+            },
+            {
+                "data": {
+                    "cat": null,
+                    "type": "personne",
+                    "id": "Ludovic Pajot",
+                    "poids": 1,
+                    "label": "Ludovic Pajot"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Souverainiste",
+                    "type": "personne",
+                    "id": "Florian Philippot",
+                    "poids": 3,
+                    "label": "Florian Philippot"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Identitaire",
+                    "type": "personne",
+                    "id": "David Rachline",
+                    "poids": 1,
+                    "label": "David Rachline"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Identitaire",
+                    "type": "personne",
+                    "id": "St\u00e9phane Ravier",
+                    "poids": 1,
+                    "label": "St\u00e9phane Ravier"
+                }
+            },
+            {
+                "data": {
+                    "cat": null,
+                    "type": "personne",
+                    "id": "Wallerand de Saint-Just",
+                    "poids": 2,
+                    "label": "Wallerand de Saint-Just"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Identitaire",
+                    "type": "personne",
+                    "id": "Philippe Vardon",
+                    "poids": 4,
+                    "label": "Philippe Vardon"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Souverainiste",
+                    "type": "personne",
+                    "id": "Philippe de Villiers",
+                    "poids": 3,
+                    "label": "Philippe de Villiers"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Autre",
+                    "type": "mouvement",
+                    "id": "Agence Riwal",
+                    "poids": 1,
+                    "label": "Agence Riwal"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Identitaire",
+                    "type": "mouvement",
+                    "id": "Bloc Identitaire",
+                    "poids": 2,
+                    "label": "Bloc Identitaire"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Identitaire",
+                    "type": "mouvement",
+                    "id": "Comit\u00e9s \u00ab Jeanne, au secours ! \u00bb",
+                    "poids": 1,
+                    "label": "Comit\u00e9s \u00ab Jeanne, au secours ! \u00bb"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Identitaire",
+                    "type": "mouvement",
+                    "id": "Cotelec",
+                    "poids": 1,
+                    "label": "Cotelec"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Souverainiste",
+                    "type": "mouvement",
+                    "id": "Debout la France !",
+                    "poids": 1,
+                    "label": "Debout la France !"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Souverainiste",
+                    "type": "mouvement",
+                    "id": "Europe des Nations et des Libert\u00e9s",
+                    "poids": 0,
+                    "label": "Europe des Nations et des Libert\u00e9s"
+                }
+            },
+            {
+                "data": {
+                    "haspic": 1,
+                    "label": "Front National",
+                    "type": "mouvement",
+                    "id": "Front National",
+                    "poids": 21,
+                    "cat": "Souverainiste"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Souverainiste",
+                    "type": "mouvement",
+                    "id": "Front National Jeunesse",
+                    "poids": 1,
+                    "label": "Front National Jeunesse"
+                }
+            },
+            {
+                "data": {
+                    "haspic": 1,
+                    "label": "Groupe Union D\u00e9fense",
+                    "type": "mouvement",
+                    "id": "Groupe Union D\u00e9fense",
+                    "poids": 3,
+                    "cat": "Identitaire"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Identitaire",
+                    "type": "mouvement",
+                    "id": "Ligue du Sud",
+                    "poids": 1,
+                    "label": "Ligue du Sud"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Int\u00e9griste",
+                    "type": "mouvement",
+                    "id": "La Manif Pour Tous",
+                    "poids": 0,
+                    "label": "La Manif Pour Tous"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Identitaire",
+                    "type": "mouvement",
+                    "id": "Mouvement National R\u00e9publicain",
+                    "poids": 1,
+                    "label": "Mouvement National R\u00e9publicain"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Souverainiste",
+                    "type": "mouvement",
+                    "id": "Mouvement Pour la France",
+                    "poids": 1,
+                    "label": "Mouvement Pour la France"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Identitaire",
+                    "type": "mouvement",
+                    "id": "Ordre Nouveau",
+                    "poids": 1,
+                    "label": "Ordre Nouveau"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Identitaire",
+                    "type": "mouvement",
+                    "id": "Oz ta droite !",
+                    "poids": 1,
+                    "label": "Oz ta droite !"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Identitaire",
+                    "type": "mouvement",
+                    "id": "Parti Nationaliste Fran\u00e7ais",
+                    "poids": 1,
+                    "label": "Parti Nationaliste Fran\u00e7ais"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Souverainiste",
+                    "type": "mouvement",
+                    "id": "Rassemblement Bleu Marine",
+                    "poids": 5,
+                    "label": "Rassemblement Bleu Marine"
+                }
+            },
+            {
+                "data": {
+                    "cat": "Identitaire",
+                    "type": "mouvement",
+                    "id": "Souverainet\u00e9, identit\u00e9 et libert\u00e9s",
+                    "poids": 0,
+                    "label": "Souverainet\u00e9, identit\u00e9 et libert\u00e9s"
+                }
+            }
+        ],
+        "edges": [
+            {
+                "data": {
+                    "source": "Agence Riwal",
+                    "target": "Fr\u00e9d\u00e9ric Chatillon"
+                }
+            },
+            {
+                "data": {
+                    "source": "Louis Aliot",
+                    "target": "Front National"
+                }
+            },
+            {
+                "data": {
+                    "source": "Marie-Christine Arnautu",
+                    "target": "Jean-Marie Le Pen"
+                }
+            },
+            {
+                "data": {
+                    "source": "Nicolas Bay",
+                    "target": "Front National"
+                }
+            },
+            {
+                "data": {
+                    "source": "Nicolas Bay",
+                    "target": "Bruno M\u00e9gret"
+                }
+            },
+            {
+                "data": {
+                    "source": "Yvan Benedetti",
+                    "target": "Parti Nationaliste Fran\u00e7ais"
+                }
+            },
+            {
+                "data": {
+                    "source": "Yvan Benedetti",
+                    "target": "Bruno Golnisch"
+                }
+            },
+            {
+                "data": {
+                    "source": "Bruno Bilde",
+                    "target": "Front National"
+                }
+            },
+            {
+                "data": {
+                    "source": "Bloc Identitaire",
+                    "target": "Philippe Vardon"
+                }
+            },
+            {
+                "data": {
+                    "source": "Jacques Bompard",
+                    "target": "Bloc Identitaire"
+                }
+            },
+            {
+                "data": {
+                    "source": "Jacques Bompard",
+                    "target": "Front National"
+                }
+            },
+            {
+                "data": {
+                    "source": "Jacques Bompard",
+                    "target": "Ligue du Sud"
+                }
+            },
+            {
+                "data": {
+                    "source": "Steeve Briois",
+                    "target": "Front National"
+                }
+            },
+            {
+                "data": {
+                    "source": "Fr\u00e9d\u00e9ric Chatillon",
+                    "target": "Groupe Union D\u00e9fense"
+                }
+            },
+            {
+                "data": {
+                    "source": "Fr\u00e9d\u00e9ric Chatillon",
+                    "target": "Marine Le Pen"
+                }
+            },
+            {
+                "data": {
+                    "source": "S\u00e9bastien Chenu",
+                    "target": "Rassemblement Bleu Marine"
+                }
+            },
+            {
+                "data": {
+                    "source": "Comit\u00e9s \u00ab Jeanne, au secours ! \u00bb",
+                    "target": "Jean-Marie Le Pen"
+                }
+            },
+            {
+                "data": {
+                    "source": "Gilbert Collard",
+                    "target": "Rassemblement Bleu Marine"
+                }
+            },
+            {
+                "data": {
+                    "source": "Cotelec",
+                    "target": "Jean-Marie Le Pen"
+                }
+            },
+            {
+                "data": {
+                    "source": "Debout la France !",
+                    "target": "Nicolas Dupont-Aignan"
+                }
+            },
+            {
+                "data": {
+                    "source": "Nicolas Dupont-Aignan",
+                    "target": "Marine Le Pen"
+                }
+            },
+            {
+                "data": {
+                    "source": "Jos\u00e9 Evrard",
+                    "target": "Front National"
+                }
+            },
+            {
+                "data": {
+                    "source": "Front National",
+                    "target": "Front National Jeunesse"
+                }
+            },
+            {
+                "data": {
+                    "source": "Front National",
+                    "target": "Bruno Golnisch"
+                }
+            },
+            {
+                "data": {
+                    "source": "Front National",
+                    "target": "Jean-Fran\u00e7ois Jalkh"
+                }
+            },
+            {
+                "data": {
+                    "source": "Front National",
+                    "target": "Jean-Marie Le Pen"
+                }
+            },
+            {
+                "data": {
+                    "source": "Front National",
+                    "target": "Marine Le Pen"
+                }
+            },
+            {
+                "data": {
+                    "source": "Front National",
+                    "target": "Marion Mar\u00e9chal-Le Pen"
+                }
+            },
+            {
+                "data": {
+                    "source": "Front National",
+                    "target": "Emmanuelle M\u00e9nard"
+                }
+            },
+            {
+                "data": {
+                    "source": "Front National",
+                    "target": "Robert M\u00e9nard"
+                }
+            },
+            {
+                "data": {
+                    "source": "Front National",
+                    "target": "Ordre Nouveau"
+                }
+            },
+            {
+                "data": {
+                    "source": "Front National",
+                    "target": "Ludovic Pajot"
+                }
+            },
+            {
+                "data": {
+                    "source": "Front National",
+                    "target": "Florian Philippot"
+                }
+            },
+            {
+                "data": {
+                    "source": "Front National",
+                    "target": "David Rachline"
+                }
+            },
+            {
+                "data": {
+                    "source": "Front National",
+                    "target": "St\u00e9phane Ravier"
+                }
+            },
+            {
+                "data": {
+                    "source": "Front National",
+                    "target": "Wallerand de Saint-Just"
+                }
+            },
+            {
+                "data": {
+                    "source": "Front National",
+                    "target": "Philippe Vardon"
+                }
+            },
+            {
+                "data": {
+                    "source": "Groupe Union D\u00e9fense",
+                    "target": "Wallerand de Saint-Just"
+                }
+            },
+            {
+                "data": {
+                    "source": "Groupe Union D\u00e9fense",
+                    "target": "Philippe Vardon"
+                }
+            },
+            {
+                "data": {
+                    "source": "Jean-Marie Le Pen",
+                    "target": "Marine Le Pen"
+                }
+            },
+            {
+                "data": {
+                    "source": "Jean-Marie Le Pen",
+                    "target": "Marion Mar\u00e9chal-Le Pen"
+                }
+            },
+            {
+                "data": {
+                    "source": "Marine Le Pen",
+                    "target": "Marion Mar\u00e9chal-Le Pen"
+                }
+            },
+            {
+                "data": {
+                    "source": "Marine Le Pen",
+                    "target": "Florian Philippot"
+                }
+            },
+            {
+                "data": {
+                    "source": "Marine Le Pen",
+                    "target": "Rassemblement Bleu Marine"
+                }
+            },
+            {
+                "data": {
+                    "source": "Marion Mar\u00e9chal-Le Pen",
+                    "target": "Philippe Vardon"
+                }
+            },
+            {
+                "data": {
+                    "source": "Marion Mar\u00e9chal-Le Pen",
+                    "target": "Philippe de Villiers"
+                }
+            },
+            {
+                "data": {
+                    "source": "Bruno M\u00e9gret",
+                    "target": "Mouvement National R\u00e9publicain"
+                }
+            },
+            {
+                "data": {
+                    "source": "Robert M\u00e9nard",
+                    "target": "Emmanuelle M\u00e9nard"
+                }
+            },
+            {
+                "data": {
+                    "source": "Robert M\u00e9nard",
+                    "target": "Oz ta droite !"
+                }
+            },
+            {
+                "data": {
+                    "source": "Robert M\u00e9nard",
+                    "target": "Rassemblement Bleu Marine"
+                }
+            },
+            {
+                "data": {
+                    "source": "Robert M\u00e9nard",
+                    "target": "Philippe de Villiers"
+                }
+            },
+            {
+                "data": {
+                    "source": "Mouvement Pour la France",
+                    "target": "Philippe de Villiers"
+                }
+            },
+            {
+                "data": {
+                    "source": "Florian Philippot",
+                    "target": "Rassemblement Bleu Marine"
+                }
+            }
+        ]
+    }
+}

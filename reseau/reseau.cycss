@@ -1,0 +1,161 @@
+core {
+	active-bg-color: #fff;
+	active-bg-opacity: 0.333;
+}
+
+edge {
+	curve-style: haystack;
+	haystack-radius: 0;
+	opacity: 0.333;
+	width: 2;
+	z-index: 0;
+	overlay-opacity: 0;
+  events: no;
+}
+
+node {
+	width: 40;
+	height: 40;
+	font-size: 10;
+	font-weight: bold;
+	min-zoomed-font-size: 4;
+	content: data(label);
+	text-valign: center;
+	text-halign: center;
+	color: #000;
+	text-outline-width: 2;
+	text-outline-color: #fff;
+	text-outline-opacity: 1;
+	text-wrap: wrap;
+	text-max-width:60;
+	overlay-color: #fff;
+}
+
+node[type = "mouvement"] {
+	width: mapData(poids, 0, 30, 100, 250);
+	height: mapData(poids, 0, 30, 100, 250);
+}
+node[type = "personne"] {
+	width: mapData(poids, 0, 15, 50, 100);
+	height: mapData(poids, 0, 15, 50, 100);
+}
+
+node[cat = "Souverainiste"] {
+	border-color: #374682;
+	background-color: #374682;
+}
+
+node[cat = "Identitaire"] {
+	border-color: #915537;
+	background-color: #915537;
+}
+
+node[cat = "Intégriste"] {
+	border-color: #913773;
+	background-color: #913773;
+}
+
+node[cat = "Complotiste"] {
+	border-color: #647D55;
+	background-color: #647D55;
+}
+
+
+
+node[haspic = 1] {
+  background-fit: cover;
+	text-valign: bottom;
+	border-width: 3;
+	text-outline-width: 0;
+	text-background-opacity: 1;
+	text-background-color: #ccc;
+  text-background-shape: roundrectangle;
+	text-border-width: 3;
+	text-border-color: #ccc;
+	text-border-opacity: 1;
+
+}
+
+node[id = "Marine Le Pen"] {
+	background-image: images/photo_MarineLePen.png;
+}
+
+node[id = "Marion Maréchal-Le Pen"] {
+	background-image: images/photo_MarionMaréchalLePen.png;
+}
+
+node[id = "Front National"] {
+	background-image: images/logo_FrontNational.png;
+}
+
+node[id = "Groupe Union Défense"] {
+	background-image: images/logo_GroupeUnionDéfense.png;
+}
+
+
+node[NodeType = "WhiteWine"] {
+	background-color: white;
+	text-outline-color: white;
+	width: mapData(Quality, 70, 100, 20, 50);
+	height: mapData(Quality, 70, 100, 20, 50);
+}
+
+edge[interaction = "cw"] {
+	line-color: white;
+}
+
+node[NodeType = "RedWine"] {
+	background-color: #DE3128;
+	text-outline-color: #DE3128;
+}
+
+edge[interaction = "cr"] {
+	line-color: #DE3128;
+}
+
+node[NodeType = "Cider"] {
+	background-color: #A4EB34;
+	text-outline-color: #A4EB34;
+}
+
+node.highlighted {
+	min-zoomed-font-size: 0;
+  z-index: 9999;
+}
+
+edge.highlighted {
+	opacity: 0.8;
+	width: 4;
+	z-index: 9999;
+}
+
+.faded {
+  events: no;
+}
+
+node.faded {
+  opacity: 0.08;
+	background-image-opacity: 0.08;
+}
+
+edge.faded {
+  opacity: 0.06;
+}
+
+.hidden {
+	display: none;
+}
+
+.highlighted {
+
+}
+
+node:selected {
+	border-color: rgb(187, 219, 247);
+	border-opacity: 0.5;
+	border-width: 10;
+}
+
+.filtered {
+	display: none;
+}
