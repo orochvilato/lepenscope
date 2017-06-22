@@ -5,6 +5,7 @@ core {
 
 edge {
 	curve-style: haystack;
+	font-size:9;
 	haystack-radius: 0;
 	opacity: 0.90;
 	width: 2;
@@ -22,59 +23,67 @@ node {
 	content: data(label);
 	text-valign: center;
 	text-halign: center;
-	color: #000;
-	text-outline-width: 2;
-	text-outline-color: #fff;
+	color: #FFF;
+	text-outline-width: 1;
+	text-outline-color: #444;
 	text-outline-opacity: 1;
 	text-wrap: wrap;
-	text-max-width:60;
 	overlay-color: #fff;
+}
+node[haspic = 1] {
+  background-fit: cover;
+	text-valign: bottom;
+	border-width: 3;
+	text-background-opacity: 1;
+	text-background-color: #ccc;
+  text-background-shape: roundrectangle;
+	text-border-width: 5;
+	text-border-opacity: 1;
+
 }
 
 node[type = "mouvement"] {
 	width: mapData(poids, 0, 30, 100, 250);
 	height: mapData(poids, 0, 30, 100, 250);
+	text-max-width:100;
 }
 node[type = "personne"] {
 	width: mapData(poids, 0, 15, 50, 100);
 	height: mapData(poids, 0, 15, 50, 100);
+	text-max-width:50;
 }
 
 node[cat = "Souverainiste"] {
 	border-color: #374682;
 	background-color: #374682;
+	text-background-color: #374682;
+	text-border-color: #374682;
 }
 
 node[cat = "Identitaire"] {
 	border-color: #915537;
 	background-color: #915537;
+	text-background-color: #915537;
+	text-border-color: #915537;
 }
 
 node[cat = "Intégriste"] {
 	border-color: #913773;
 	background-color: #913773;
+	text-background-color: #913773;
+	text-border-color: #913773;
 }
 
 node[cat = "Complotiste"] {
 	border-color: #647D55;
 	background-color: #647D55;
+	text-background-color: #647D55;
+	text-border-color: #647D55;
 }
 
 
 
-node[haspic = 1] {
-  background-fit: cover;
-	text-valign: bottom;
-	border-width: 3;
-	text-outline-width: 0;
-	text-background-opacity: 1;
-	text-background-color: #ccc;
-  text-background-shape: roundrectangle;
-	text-border-width: 3;
-	text-border-color: #ccc;
-	text-border-opacity: 1;
 
-}
 
 node[id = "Marine Le Pen"] {
 	background-image: images/photo_MarineLePen.png;
@@ -84,12 +93,44 @@ node[id = "Marion Maréchal-Le Pen"] {
 	background-image: images/photo_MarionMaréchalLePen.png;
 }
 
+node[id = "Bloc Identitaire"] {
+	background-image: images/logo_BlocIdentitaire.png;
+}
+
+node[id = "Debout la France !"] {
+	background-image: images/logo_DeboutLaFrance!.png;
+}
+
+node[id = "Europe des Nations et des Libertés"] {
+	background-image: images/logo_EuropeDesNationsEtDesLibertés.png;
+}
+
 node[id = "Front National"] {
 	background-image: images/logo_FrontNational.png;
 }
 
+node[id = "Front National Jeunesse"] {
+	background-image: images/logo_FrontNationalJeunesse.png;
+}
+
 node[id = "Groupe Union Défense"] {
 	background-image: images/logo_GroupeUnionDéfense.png;
+}
+
+node[id = "Ligue du Sud"] {
+	background-image: images/logo_LigueDuSud.png;
+}
+
+node[id = "Ordre Nouveau"] {
+	background-image: images/logo_OrdreNouveau.png;
+}
+
+node[id = "Oz ta droite !"] {
+	background-image: images/logo_OzTaDroite!.png;
+}
+
+node[id = "Rassemblement Bleu Marine"] {
+	background-image: images/logo_RassemblementBleuMarine.png;
 }
 
 
@@ -116,9 +157,9 @@ node.highlighted {
 }
 
 edge.highlighted {
-	opacity: 0.8;
+	opacity: 1;
 	width: 4;
-	z-index: 9999;
+	z-index: 1;
 }
 
 .faded {
@@ -143,8 +184,7 @@ edge.faded {
 }
 
 node:selected {
-	border-color: rgb(187, 219, 247);
-	border-opacity: 0.5;
+	border-opacity: 1;
 	border-width: 10;
 }
 

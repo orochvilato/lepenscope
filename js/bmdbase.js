@@ -13,6 +13,11 @@ function setDrawerPosition(position) {
   $container.addClass(position)
 }
 
+$('.test').click(function() {
+  cy.resize();
+  window.cyreset();
+  console.log('bingo!');
+})
 $(document).ready(function() {
   var buttons = ["drawer-f-l", "drawer-f-r", "drawer-f-t", "drawer-f-b"]
 
@@ -41,6 +46,11 @@ $(document).ready(function() {
       $icon.text('visibility')
       $btn.attr('title', 'Drawer force closed')
     }
+
+    $container.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
+              function(event) {
+                cy.resize();
+                window.cyreset();
+              });
   })
 })
-

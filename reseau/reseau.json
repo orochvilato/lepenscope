@@ -248,7 +248,7 @@
             },
             {
                 "data": {
-                    "cat": "Autre",
+                    "cat": null,
                     "type": "mouvement",
                     "id": "Agence Riwal",
                     "poids": 1,
@@ -257,11 +257,12 @@
             },
             {
                 "data": {
-                    "cat": "Identitaire",
+                    "haspic": 1,
+                    "label": "Bloc Identitaire",
                     "type": "mouvement",
                     "id": "Bloc Identitaire",
                     "poids": 2,
-                    "label": "Bloc Identitaire"
+                    "cat": "Identitaire"
                 }
             },
             {
@@ -275,7 +276,7 @@
             },
             {
                 "data": {
-                    "cat": "Identitaire",
+                    "cat": null,
                     "type": "mouvement",
                     "id": "Cotelec",
                     "poids": 1,
@@ -284,20 +285,22 @@
             },
             {
                 "data": {
-                    "cat": "Souverainiste",
+                    "haspic": 1,
+                    "label": "Debout la France !",
                     "type": "mouvement",
                     "id": "Debout la France !",
                     "poids": 1,
-                    "label": "Debout la France !"
+                    "cat": "Souverainiste"
                 }
             },
             {
                 "data": {
-                    "cat": "Souverainiste",
+                    "haspic": 1,
+                    "label": "Europe des Nations et des Libert\u00e9s",
                     "type": "mouvement",
                     "id": "Europe des Nations et des Libert\u00e9s",
                     "poids": 0,
-                    "label": "Europe des Nations et des Libert\u00e9s"
+                    "cat": "Souverainiste"
                 }
             },
             {
@@ -312,11 +315,12 @@
             },
             {
                 "data": {
-                    "cat": "Souverainiste",
+                    "haspic": 1,
+                    "label": "Front National Jeunesse",
                     "type": "mouvement",
                     "id": "Front National Jeunesse",
                     "poids": 1,
-                    "label": "Front National Jeunesse"
+                    "cat": "Souverainiste"
                 }
             },
             {
@@ -331,11 +335,12 @@
             },
             {
                 "data": {
-                    "cat": "Identitaire",
+                    "haspic": 1,
+                    "label": "Ligue du Sud",
                     "type": "mouvement",
                     "id": "Ligue du Sud",
                     "poids": 1,
-                    "label": "Ligue du Sud"
+                    "cat": "Identitaire"
                 }
             },
             {
@@ -367,20 +372,22 @@
             },
             {
                 "data": {
-                    "cat": "Identitaire",
+                    "haspic": 1,
+                    "label": "Ordre Nouveau",
                     "type": "mouvement",
                     "id": "Ordre Nouveau",
                     "poids": 1,
-                    "label": "Ordre Nouveau"
+                    "cat": "Identitaire"
                 }
             },
             {
                 "data": {
-                    "cat": "Identitaire",
+                    "haspic": 1,
+                    "label": "Oz ta droite !",
                     "type": "mouvement",
                     "id": "Oz ta droite !",
                     "poids": 1,
-                    "label": "Oz ta droite !"
+                    "cat": "Identitaire"
                 }
             },
             {
@@ -394,11 +401,12 @@
             },
             {
                 "data": {
-                    "cat": "Souverainiste",
+                    "haspic": 1,
+                    "label": "Rassemblement Bleu Marine",
                     "type": "mouvement",
                     "id": "Rassemblement Bleu Marine",
                     "poids": 5,
-                    "label": "Rassemblement Bleu Marine"
+                    "cat": "Souverainiste"
                 }
             },
             {
@@ -415,319 +423,372 @@
             {
                 "data": {
                     "source": "Agence Riwal",
-                    "target": "Fr\u00e9d\u00e9ric Chatillon"
+                    "target": "Fr\u00e9d\u00e9ric Chatillon",
+                    "label": ""
                 }
             },
             {
                 "data": {
                     "source": "Louis Aliot",
-                    "target": "Front National"
+                    "target": "Front National",
+                    "label": "Vice-pr\u00e9sident"
                 }
             },
             {
                 "data": {
                     "source": "Marie-Christine Arnautu",
-                    "target": "Jean-Marie Le Pen"
+                    "target": "Jean-Marie Le Pen",
+                    "label": ""
                 }
             },
             {
                 "data": {
                     "source": "Nicolas Bay",
-                    "target": "Front National"
+                    "target": "Front National",
+                    "label": "Secr\u00e9taire\ng\u00e9n\u00e9ral"
                 }
             },
             {
                 "data": {
                     "source": "Nicolas Bay",
-                    "target": "Bruno M\u00e9gret"
+                    "target": "Bruno M\u00e9gret",
+                    "label": ""
                 }
             },
             {
                 "data": {
                     "source": "Yvan Benedetti",
-                    "target": "Parti Nationaliste Fran\u00e7ais"
+                    "target": "Parti Nationaliste Fran\u00e7ais",
+                    "label": "Porte-parole"
                 }
             },
             {
                 "data": {
                     "source": "Yvan Benedetti",
-                    "target": "Bruno Golnisch"
+                    "target": "Bruno Golnisch",
+                    "label": ""
                 }
             },
             {
                 "data": {
                     "source": "Bruno Bilde",
-                    "target": "Front National"
+                    "target": "Front National",
+                    "label": "Membre"
                 }
             },
             {
                 "data": {
                     "source": "Bloc Identitaire",
-                    "target": "Philippe Vardon"
+                    "target": "Philippe Vardon",
+                    "label": "Cofondateur"
                 }
             },
             {
                 "data": {
                     "source": "Jacques Bompard",
-                    "target": "Bloc Identitaire"
+                    "target": "Bloc Identitaire",
+                    "label": ""
                 }
             },
             {
                 "data": {
                     "source": "Jacques Bompard",
-                    "target": "Front National"
+                    "target": "Front National",
+                    "label": "Cofondateur"
                 }
             },
             {
                 "data": {
                     "source": "Jacques Bompard",
-                    "target": "Ligue du Sud"
+                    "target": "Ligue du Sud",
+                    "label": "Pr\u00e9sident\net\nfondateur"
                 }
             },
             {
                 "data": {
                     "source": "Steeve Briois",
-                    "target": "Front National"
+                    "target": "Front National",
+                    "label": "Vice-pr\u00e9sident"
                 }
             },
             {
                 "data": {
                     "source": "Fr\u00e9d\u00e9ric Chatillon",
-                    "target": "Groupe Union D\u00e9fense"
+                    "target": "Groupe Union D\u00e9fense",
+                    "label": "Ancien\npr\u00e9sident"
                 }
             },
             {
                 "data": {
                     "source": "Fr\u00e9d\u00e9ric Chatillon",
-                    "target": "Marine Le Pen"
+                    "target": "Marine Le Pen",
+                    "label": ""
                 }
             },
             {
                 "data": {
                     "source": "S\u00e9bastien Chenu",
-                    "target": "Rassemblement Bleu Marine"
+                    "target": "Rassemblement Bleu Marine",
+                    "label": "Membre"
                 }
             },
             {
                 "data": {
                     "source": "Comit\u00e9s \u00ab Jeanne, au secours ! \u00bb",
-                    "target": "Jean-Marie Le Pen"
+                    "target": "Jean-Marie Le Pen",
+                    "label": "Pr\u00e9sident\net\nfondateur"
                 }
             },
             {
                 "data": {
                     "source": "Gilbert Collard",
-                    "target": "Rassemblement Bleu Marine"
+                    "target": "Rassemblement Bleu Marine",
+                    "label": "Secr\u00e9taire\ng\u00e9n\u00e9ral"
                 }
             },
             {
                 "data": {
                     "source": "Cotelec",
-                    "target": "Jean-Marie Le Pen"
+                    "target": "Jean-Marie Le Pen",
+                    "label": "Cr\u00e9ateur"
                 }
             },
             {
                 "data": {
                     "source": "Debout la France !",
-                    "target": "Nicolas Dupont-Aignan"
+                    "target": "Nicolas Dupont-Aignan",
+                    "label": "Pr\u00e9sident-fondateur"
                 }
             },
             {
                 "data": {
                     "source": "Nicolas Dupont-Aignan",
-                    "target": "Marine Le Pen"
+                    "target": "Marine Le Pen",
+                    "label": "Soutien\nlors\ndu\nsecond\ntour\ndes\nPr\u00e9sidentielles\n2017"
                 }
             },
             {
                 "data": {
                     "source": "Jos\u00e9 Evrard",
-                    "target": "Front National"
+                    "target": "Front National",
+                    "label": "Membre"
                 }
             },
             {
                 "data": {
                     "source": "Front National",
-                    "target": "Front National Jeunesse"
+                    "target": "Front National Jeunesse",
+                    "label": "Mouvement\nde\njeunesse\naffili\u00e9"
                 }
             },
             {
                 "data": {
                     "source": "Front National",
-                    "target": "Bruno Golnisch"
+                    "target": "Bruno Golnisch",
+                    "label": "Ancien\nvice-pr\u00e9sident"
                 }
             },
             {
                 "data": {
                     "source": "Front National",
-                    "target": "Jean-Fran\u00e7ois Jalkh"
+                    "target": "Jean-Fran\u00e7ois Jalkh",
+                    "label": "Vice-pr\u00e9sident"
                 }
             },
             {
                 "data": {
                     "source": "Front National",
-                    "target": "Jean-Marie Le Pen"
+                    "target": "Jean-Marie Le Pen",
+                    "label": "Ancien\npr\u00e9sident"
                 }
             },
             {
                 "data": {
                     "source": "Front National",
-                    "target": "Marine Le Pen"
+                    "target": "Marine Le Pen",
+                    "label": "Pr\u00e9sidente"
                 }
             },
             {
                 "data": {
                     "source": "Front National",
-                    "target": "Marion Mar\u00e9chal-Le Pen"
+                    "target": "Marion Mar\u00e9chal-Le Pen",
+                    "label": "Ancienne\nmembre"
                 }
             },
             {
                 "data": {
                     "source": "Front National",
-                    "target": "Emmanuelle M\u00e9nard"
+                    "target": "Emmanuelle M\u00e9nard",
+                    "label": "D\u00e9put\u00e9e\nsoutenue"
                 }
             },
             {
                 "data": {
                     "source": "Front National",
-                    "target": "Robert M\u00e9nard"
+                    "target": "Robert M\u00e9nard",
+                    "label": "Soutien"
                 }
             },
             {
                 "data": {
                     "source": "Front National",
-                    "target": "Ordre Nouveau"
+                    "target": "Ordre Nouveau",
+                    "label": "Mouvement\nfondateur"
                 }
             },
             {
                 "data": {
                     "source": "Front National",
-                    "target": "Ludovic Pajot"
+                    "target": "Ludovic Pajot",
+                    "label": "Membre"
                 }
             },
             {
                 "data": {
                     "source": "Front National",
-                    "target": "Florian Philippot"
+                    "target": "Florian Philippot",
+                    "label": "Vice-pr\u00e9sident"
                 }
             },
             {
                 "data": {
                     "source": "Front National",
-                    "target": "David Rachline"
+                    "target": "David Rachline",
+                    "label": "Membre"
                 }
             },
             {
                 "data": {
                     "source": "Front National",
-                    "target": "St\u00e9phane Ravier"
+                    "target": "St\u00e9phane Ravier",
+                    "label": "Membre"
                 }
             },
             {
                 "data": {
                     "source": "Front National",
-                    "target": "Wallerand de Saint-Just"
+                    "target": "Wallerand de Saint-Just",
+                    "label": "Tr\u00e9sorier\nnational"
                 }
             },
             {
                 "data": {
                     "source": "Front National",
-                    "target": "Philippe Vardon"
+                    "target": "Philippe Vardon",
+                    "label": "Membre"
                 }
             },
             {
                 "data": {
                     "source": "Groupe Union D\u00e9fense",
-                    "target": "Wallerand de Saint-Just"
+                    "target": "Wallerand de Saint-Just",
+                    "label": "Ancien\nparticipant"
                 }
             },
             {
                 "data": {
                     "source": "Groupe Union D\u00e9fense",
-                    "target": "Philippe Vardon"
+                    "target": "Philippe Vardon",
+                    "label": "Cofondateur"
                 }
             },
             {
                 "data": {
                     "source": "Jean-Marie Le Pen",
-                    "target": "Marine Le Pen"
+                    "target": "Marine Le Pen",
+                    "label": "P\u00e8re\net\nfille"
                 }
             },
             {
                 "data": {
                     "source": "Jean-Marie Le Pen",
-                    "target": "Marion Mar\u00e9chal-Le Pen"
+                    "target": "Marion Mar\u00e9chal-Le Pen",
+                    "label": "Grand-p\u00e8re\net\npetite-fille"
                 }
             },
             {
                 "data": {
                     "source": "Marine Le Pen",
-                    "target": "Marion Mar\u00e9chal-Le Pen"
+                    "target": "Marion Mar\u00e9chal-Le Pen",
+                    "label": "Tante\net\nni\u00e8ce"
                 }
             },
             {
                 "data": {
                     "source": "Marine Le Pen",
-                    "target": "Florian Philippot"
+                    "target": "Florian Philippot",
+                    "label": ""
                 }
             },
             {
                 "data": {
                     "source": "Marine Le Pen",
-                    "target": "Rassemblement Bleu Marine"
+                    "target": "Rassemblement Bleu Marine",
+                    "label": "Pr\u00e9sidente"
                 }
             },
             {
                 "data": {
                     "source": "Marion Mar\u00e9chal-Le Pen",
-                    "target": "Philippe Vardon"
+                    "target": "Philippe Vardon",
+                    "label": ""
                 }
             },
             {
                 "data": {
                     "source": "Marion Mar\u00e9chal-Le Pen",
-                    "target": "Philippe de Villiers"
+                    "target": "Philippe de Villiers",
+                    "label": ""
                 }
             },
             {
                 "data": {
                     "source": "Bruno M\u00e9gret",
-                    "target": "Mouvement National R\u00e9publicain"
+                    "target": "Mouvement National R\u00e9publicain",
+                    "label": "Fondateur"
                 }
             },
             {
                 "data": {
                     "source": "Robert M\u00e9nard",
-                    "target": "Emmanuelle M\u00e9nard"
+                    "target": "Emmanuelle M\u00e9nard",
+                    "label": "Mari\u00e9s"
                 }
             },
             {
                 "data": {
                     "source": "Robert M\u00e9nard",
-                    "target": "Oz ta droite !"
+                    "target": "Oz ta droite !",
+                    "label": "Fondateur"
                 }
             },
             {
                 "data": {
                     "source": "Robert M\u00e9nard",
-                    "target": "Rassemblement Bleu Marine"
+                    "target": "Rassemblement Bleu Marine",
+                    "label": "Soutien"
                 }
             },
             {
                 "data": {
                     "source": "Robert M\u00e9nard",
-                    "target": "Philippe de Villiers"
+                    "target": "Philippe de Villiers",
+                    "label": ""
                 }
             },
             {
                 "data": {
                     "source": "Mouvement Pour la France",
-                    "target": "Philippe de Villiers"
+                    "target": "Philippe de Villiers",
+                    "label": "Pr\u00e9sident\net\nfondateur"
                 }
             },
             {
                 "data": {
                     "source": "Florian Philippot",
-                    "target": "Rassemblement Bleu Marine"
+                    "target": "Rassemblement Bleu Marine",
+                    "label": "Porte-parole"
                 }
             }
         ]

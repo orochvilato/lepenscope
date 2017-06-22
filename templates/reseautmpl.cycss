@@ -5,6 +5,7 @@ core {
 
 edge {
 	curve-style: haystack;
+	font-size:9;
 	haystack-radius: 0;
 	opacity: 0.90;
 	width: 2;
@@ -22,44 +23,46 @@ node {
 	content: data(label);
 	text-valign: center;
 	text-halign: center;
-	color: #000;
-	text-outline-width: 2;
-	text-outline-color: #fff;
+	color: #FFF;
+	text-outline-width: 1;
+	text-outline-color: #444;
 	text-outline-opacity: 1;
 	text-wrap: wrap;
-	text-max-width:60;
 	overlay-color: #fff;
+}
+node[haspic = 1] {
+  background-fit: cover;
+	text-valign: bottom;
+	border-width: 3;
+	text-background-opacity: 1;
+	text-background-color: #ccc;
+  text-background-shape: roundrectangle;
+	text-border-width: 5;
+	text-border-opacity: 1;
+
 }
 
 node[type = "mouvement"] {
 	width: mapData(poids, 0, 30, 100, 250);
 	height: mapData(poids, 0, 30, 100, 250);
+	text-max-width:100;
 }
 node[type = "personne"] {
 	width: mapData(poids, 0, 15, 50, 100);
 	height: mapData(poids, 0, 15, 50, 100);
+	text-max-width:50;
 }
 {% for cat in categories %}
 node[cat = "{{ cat['nom']}}"] {
 	border-color: {{ cat['couleur'] }};
 	background-color: {{ cat['couleur'] }};
+	text-background-color: {{ cat['couleur'] }};
+	text-border-color: {{ cat['couleur'] }};
 }
 {% endfor %}
 
 
-node[haspic = 1] {
-  background-fit: cover;
-	text-valign: bottom;
-	border-width: 3;
-	text-outline-width: 0;
-	text-background-opacity: 1;
-	text-background-color: #ccc;
-  text-background-shape: roundrectangle;
-	text-border-width: 3;
-	text-border-color: #ccc;
-	text-border-opacity: 1;
 
-}
 {% for nodeimg in nodesimages %}
 node[id = "{{ nodeimg['id'] }}"] {
 	background-image: {{ nodeimg['image'] }};
@@ -89,9 +92,9 @@ node.highlighted {
 }
 
 edge.highlighted {
-	opacity: 0.8;
+	opacity: 1;
 	width: 4;
-	z-index: 9999;
+	z-index: 1;
 }
 
 .faded {
@@ -116,8 +119,7 @@ edge.faded {
 }
 
 node:selected {
-	border-color: rgb(187, 219, 247);
-	border-opacity: 0.5;
+	border-opacity: 1;
 	border-width: 10;
 }
 

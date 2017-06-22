@@ -9,6 +9,7 @@ $(function(){
   var easing = 'linear';
 
   var cy;
+  var cyreset;
 
   // get exported json from cytoscape desktop via ajax
   var graphP = $.ajax({
@@ -66,6 +67,9 @@ $(function(){
       cy.batch(function(){
         others.addClass('hidden');
         nhood.removeClass('hidden');
+        nhood.nodes().forEach(function(n) {
+          n.data('label',n.data('orgLabel'));
+        })
 
         allEles.removeClass('faded highlighted');
 
@@ -89,9 +93,28 @@ $(function(){
       });
     };
 
+    var initLabels = function() {
+      cy.batch(function() {
+        nhood.nodes().forEach(function(n){
+          var l = n.data('orgLabel');
+          var edges = n.edgesWith(node);
+          edges.edges().forEach(function(e){
+            if (e.data('label') !== '') {
+              n.data('label',l+' ('+e.data('label')+')');
+            }
+          })
+        });
+      });
+
+    }
     var runLayout = function(){
       var p = node.data('orgPos');
 
+      var l2 = nhood.filter(':visible').makeLayout({
+          name: 'cose-bilkent',
+          nodeRepulsion: 10000,
+          animate: true
+      });
       var l = nhood.filter(':visible').makeLayout({
         name: 'concentric',
         fit: false,
@@ -140,6 +163,7 @@ $(function(){
     };
 
     var showOthersFaded = function(){
+      console.log('faded');
       return Promise.delay( 250 ).then(function(){
         cy.batch(function(){
           others.removeClass('hidden').addClass('faded');
@@ -149,10 +173,10 @@ $(function(){
 
     return Promise.resolve()
       .then( reset )
+      .then( initLabels )
       .then( runLayout )
       .then( fit )
-      .then( showOthersFaded )
-    ;
+      .then( showOthersFaded );
 
   }
 
@@ -205,6 +229,13 @@ $(function(){
 
     var resetHighlight = function(){
       nhood.removeClass('highlighted');
+      cy.batch(function() {
+        nhood.nodes().forEach(function(n) {
+          n.data('label',n.data('orgLabel'));
+        });
+      });
+
+
     };
 
     return Promise.resolve()
@@ -212,6 +243,7 @@ $(function(){
       .then( hideOthers )
       .then( restorePositions )
       .then( showOthers )
+      .then( cyreset )
     ;
   }
 
@@ -261,6 +293,8 @@ $(function(){
       motionBlur: true,
       selectionType: 'single',
       boxSelectionEnabled: false,
+      minZoom:.5,
+      maxZoom:3,
       autoungrabify: true
     });
 
@@ -269,6 +303,7 @@ $(function(){
     function layoutready(){
       allNodes.forEach(function( n ){
         var p = n.position();
+        n.data('orgLabel',n.data('label'));
         n.data('orgPos',{
           x: p.x,
           y: p.y
@@ -278,7 +313,6 @@ $(function(){
     cy.on('free', 'node', function( e ){
       var n = e.cyTarget;
       var p = n.position();
-
       n.data('orgPos', {
         x: p.x,
         y: p.y
@@ -381,7 +415,7 @@ $(function(){
     }
   }, 50));
 
-  $('#reset').on('click', function(){
+  cyreset = window.cyreset = function () {
     if( isDirty() ){
       clear();
     } else {
@@ -400,6 +434,9 @@ $(function(){
         easing: easing
       }).play();
     }
+  }
+  $('#reset').on('click', function(){
+    cyreset()
   });
 
   $('#filters').on('click', 'input', function(){

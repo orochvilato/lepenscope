@@ -61,7 +61,12 @@ $(function(){
 
     var nhood = lastHighlighted = node.closedNeighborhood();
     var others = lastUnhighlighted = cy.elements().not( nhood );
-
+    console.log(node.connectedEdges());
+    node.connectedEdges().forEach(function(e){
+      var l = node.data('label');
+      node.data('oldLabel',l);
+      node.data('label',l+' ('+e.source().data('label')+')')
+    });
     var reset = function(){
       cy.batch(function(){
         others.addClass('hidden');
@@ -455,7 +460,7 @@ $(function(){
             filter();
           }
 
-      
+
       });
 
     });

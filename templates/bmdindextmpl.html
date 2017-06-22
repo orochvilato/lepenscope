@@ -1,16 +1,32 @@
-{% extends "bmdbasetmpl.html" %}
+{% extends "basetmpl.html" %}
 {% block head %}
+<style>
+#parent {
+  display: flex;
+  height: 80vh;
+}
+#cy {
+  flex: 1;
+}
+#infoelt {
+  width:0px;
+}
+</style>
 <!--<link href="css/style.css" rel="stylesheet">-->
 {% endblock %}
+{% block navbuttons %}
+  <li><a href="#" id="reset"><i class="fa fa-arrows-h"></i></a></li>
+  <li><a href="#" id="filter"><i class="fa fa-filter"></i></a></li>
+{% endblock %}
 {% block content %}
-  <div id="cy" style="height:90vh;width:100%;"></div>
+  <div id="parent">
+    <div id="cy"></div>
+    <div id="infoelt"></div>
+  </div>
   <div id="loading">
     <span class="fa fa-refresh fa-spin"></span>
   </div>
 
-  <button id="reset" class="btn btn-default"><i class="fa fa-arrows-h"></i></button>
-  <button id="filter" class="btn btn-default"><i class="fa fa-filter"></i></button>
-  <button id="about" class="btn btn-default"><i class="fa fa-info"></i></button>
 
   <div id="filters">
     <div class="filterset-section-title">Lepenscope</div>

@@ -11,8 +11,12 @@ import re
 def loadImages():
     loadedimages = os.listdir('images/')
     r = requests.get('https://www.googleapis.com/drive/v3/files?q="0BxG9i5BMTacqRl8yMU9SbW5PY0U"+in+parents&key=%s' % APIKEY)
-    print r.content
-    images = json.loads(r.content)['files']
+
+    content = json.loads(r.content)
+    if not 'files'  in content:
+        print content
+        return
+    images = content['files']
     for image in images:
         id = re.match(r'photo_([^\.]+).[a-z]+|logo_([^\.]+).[a-z]+',image['name']).groups()
         if id[0]:
@@ -72,7 +76,7 @@ for i,row in enumerate(wsLien.rows):
         continue
     nodeWeights[row[0].value] = nodeWeights.get(row[0].value,0) + 1
     nodeWeights[row[1].value] = nodeWeights.get(row[1].value,0) + 1
-    elements['edges'].append({'data':{'source':row[0].value,'target':row[1].value}})
+    elements['edges'].append({'data':{'source':row[0].value,'target':row[1].value,'label':'\n'.join(row[2].value.split(' ') if row[2].value else "")}})
 
 categories = []
 nodesimages = []
