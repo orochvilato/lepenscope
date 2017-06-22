@@ -1,0 +1,53 @@
+{% extends "bmdbasetmpl.html" %}
+{% block head %}
+<!--<link href="css/style.css" rel="stylesheet">-->
+{% endblock %}
+{% block content %}
+  <div id="cy" style="height:90vh;width:100%;"></div>
+  <div id="loading">
+    <span class="fa fa-refresh fa-spin"></span>
+  </div>
+
+  <button id="reset" class="btn btn-default"><i class="fa fa-arrows-h"></i></button>
+  <button id="filter" class="btn btn-default"><i class="fa fa-filter"></i></button>
+  <button id="about" class="btn btn-default"><i class="fa fa-info"></i></button>
+
+  <div id="filters">
+    <div class="filterset-section-title">Lepenscope</div>
+
+    <div class="filtersets">
+      <div class="filterset">
+        <div class="filterset-title">Type</div>
+        <input id="personne" type="checkbox" checked></input><label for="personne">Personne</label><br />
+        <input id="mouvement" type="checkbox" checked></input><label for="mouvement">Mouvement</label><br />
+      </div>
+      <div class="filterset right">
+        <div class="filterset-title">Catégories</div>
+        {% for cat in categories %}<input id="{{ cat['id'] }}" type="checkbox" checked></input><label for="{{ cat['id'] }}">{{ cat['nom'] }}</label><br />
+        {% endfor %}<input id="autre" type="checkbox" checked></input><label for="autre">Autre</label><br />
+
+      </div>
+    </div>
+  </div>
+{% endblock %}
+{% block javascript %}
+<script src="https://use.fontawesome.com/6f4c3160b1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+<!--<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.1.2/cytoscape.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/basic/jquery.qtip.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/basic/jquery.qtip.min.css" rel="stylesheet" type="text/css" />
+<script src="js/cytoscape-qtip.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.5.0/bluebird.min.js"></script>
+<!--<script src="bootstrap.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>-->
+<script src="js/typeahead.bundle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+<script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-cose-bilkent/1.6.5/cytoscape-cose-bilkent.js"></script>
+<script src="js/lepenscope.js"></script>
+
+{% endblock %}

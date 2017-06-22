@@ -138,4 +138,6 @@ env = Environment(
 open('reseau/reseau.cycss','w').write(env.get_template('reseautmpl.cycss').render(categories=categories,nodesimages=nodesimages).encode('utf-8'))
 open('js/lepenscope.js','w').write(env.get_template('lepenscopetmpl.js').render(categories=categories).encode('utf-8'))
 open('index.html','w').write(env.get_template('indextmpl.html').render(categories=categories).encode('utf-8'))
+open('index2.html','w').write(env.get_template('bmdindextmpl.html').render(categories=categories).encode('utf-8'))
+
 #open('reseau.html','w').write(env.get_template('reseautempl.html').render(nodes=nodes,edges=edges).encode('utf-8'))
