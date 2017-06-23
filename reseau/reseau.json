@@ -15,7 +15,7 @@
                     "cat": "Int\u00e9griste",
                     "type": "personne",
                     "id": "Marie-Christine Arnautu",
-                    "poids": 1,
+                    "poids": 2,
                     "label": "Marie-Christine Arnautu"
                 }
             },
@@ -24,7 +24,7 @@
                     "cat": "Souverainiste",
                     "type": "personne",
                     "id": "Nicolas Bay",
-                    "poids": 2,
+                    "poids": 3,
                     "label": "Nicolas Bay"
                 }
             },
@@ -60,7 +60,7 @@
                     "cat": "Souverainiste",
                     "type": "personne",
                     "id": "Steeve Briois",
-                    "poids": 1,
+                    "poids": 2,
                     "label": "Steeve Briois"
                 }
             },
@@ -87,7 +87,7 @@
                     "cat": "Souverainiste",
                     "type": "personne",
                     "id": "Gilbert Collard",
-                    "poids": 1,
+                    "poids": 2,
                     "label": "Gilbert Collard"
                 }
             },
@@ -123,7 +123,7 @@
                     "cat": "Identitaire",
                     "type": "personne",
                     "id": "Jean-Fran\u00e7ois Jalkh",
-                    "poids": 1,
+                    "poids": 2,
                     "label": "Jean-Fran\u00e7ois Jalkh"
                 }
             },
@@ -142,7 +142,7 @@
                     "label": "Marine Le Pen",
                     "type": "personne",
                     "id": "Marine Le Pen",
-                    "poids": 7,
+                    "poids": 8,
                     "cat": "Souverainiste"
                 }
             },
@@ -152,7 +152,7 @@
                     "label": "Marion Mar\u00e9chal-Le Pen",
                     "type": "personne",
                     "id": "Marion Mar\u00e9chal-Le Pen",
-                    "poids": 5,
+                    "poids": 6,
                     "cat": "Identitaire"
                 }
             },
@@ -197,7 +197,7 @@
                     "cat": "Souverainiste",
                     "type": "personne",
                     "id": "Florian Philippot",
-                    "poids": 3,
+                    "poids": 4,
                     "label": "Florian Philippot"
                 }
             },
@@ -271,7 +271,7 @@
                     "label": "Comit\u00e9s \u00ab Jeanne, au secours ! \u00bb",
                     "type": "mouvement",
                     "id": "Comit\u00e9s \u00ab Jeanne, au secours ! \u00bb",
-                    "poids": 1,
+                    "poids": 2,
                     "cat": "Identitaire"
                 }
             },
@@ -300,7 +300,7 @@
                     "label": "Europe des Nations et des Libert\u00e9s",
                     "type": "mouvement",
                     "id": "Europe des Nations et des Libert\u00e9s",
-                    "poids": 0,
+                    "poids": 8,
                     "cat": "Souverainiste"
                 }
             },
@@ -310,7 +310,7 @@
                     "label": "Front National",
                     "type": "mouvement",
                     "id": "Front National",
-                    "poids": 21,
+                    "poids": 23,
                     "cat": "Souverainiste"
                 }
             },
@@ -340,7 +340,7 @@
                     "label": "Ligue du Sud",
                     "type": "mouvement",
                     "id": "Ligue du Sud",
-                    "poids": 1,
+                    "poids": 2,
                     "cat": "Identitaire"
                 }
             },
@@ -350,7 +350,7 @@
                     "label": "La Manif Pour Tous",
                     "type": "mouvement",
                     "id": "La Manif Pour Tous",
-                    "poids": 0,
+                    "poids": 2,
                     "cat": "Int\u00e9griste"
                 }
             },
@@ -410,7 +410,7 @@
                     "label": "Rassemblement Bleu Marine",
                     "type": "mouvement",
                     "id": "Rassemblement Bleu Marine",
-                    "poids": 5,
+                    "poids": 7,
                     "cat": "Souverainiste"
                 }
             },
@@ -420,7 +420,7 @@
                     "label": "Souverainet\u00e9, identit\u00e9 et libert\u00e9s",
                     "type": "mouvement",
                     "id": "Souverainet\u00e9, identit\u00e9 et libert\u00e9s",
-                    "poids": 0,
+                    "poids": 4,
                     "cat": "Identitaire"
                 }
             }
@@ -430,7 +430,7 @@
                 "data": {
                     "source": "Agence Riwal",
                     "target": "Fr\u00e9d\u00e9ric Chatillon",
-                    "label": null
+                    "label": ""
                 }
             },
             {
@@ -443,8 +443,22 @@
             {
                 "data": {
                     "source": "Marie-Christine Arnautu",
+                    "target": "Europe des Nations et des Libert\u00e9s",
+                    "label": ""
+                }
+            },
+            {
+                "data": {
+                    "source": "Marie-Christine Arnautu",
                     "target": "Jean-Marie Le Pen",
-                    "label": null
+                    "label": ""
+                }
+            },
+            {
+                "data": {
+                    "source": "Nicolas Bay",
+                    "target": "Europe des Nations et des Libert\u00e9s",
+                    "label": ""
                 }
             },
             {
@@ -458,7 +472,7 @@
                 "data": {
                     "source": "Nicolas Bay",
                     "target": "Bruno M\u00e9gret",
-                    "label": null
+                    "label": ""
                 }
             },
             {
@@ -472,7 +486,7 @@
                 "data": {
                     "source": "Yvan Benedetti",
                     "target": "Bruno Golnisch",
-                    "label": null
+                    "label": ""
                 }
             },
             {
@@ -493,7 +507,7 @@
                 "data": {
                     "source": "Jacques Bompard",
                     "target": "Bloc Identitaire",
-                    "label": null
+                    "label": ""
                 }
             },
             {
@@ -508,6 +522,13 @@
                     "source": "Jacques Bompard",
                     "target": "Ligue du Sud",
                     "label": "Pr\u00e9sident et fondateur"
+                }
+            },
+            {
+                "data": {
+                    "source": "Steeve Briois",
+                    "target": "Europe des Nations et des Libert\u00e9s",
+                    "label": ""
                 }
             },
             {
@@ -528,7 +549,7 @@
                 "data": {
                     "source": "Fr\u00e9d\u00e9ric Chatillon",
                     "target": "Marine Le Pen",
-                    "label": null
+                    "label": ""
                 }
             },
             {
@@ -543,6 +564,20 @@
                     "source": "Comit\u00e9s \u00ab Jeanne, au secours ! \u00bb",
                     "target": "Jean-Marie Le Pen",
                     "label": "Pr\u00e9sident et fondateur"
+                }
+            },
+            {
+                "data": {
+                    "source": "Comit\u00e9s \u00ab Jeanne, au secours ! \u00bb",
+                    "target": "Souverainet\u00e9, identit\u00e9 et libert\u00e9s",
+                    "label": "Accord \u00e9lectoral lors des l\u00e9gislatives 2017"
+                }
+            },
+            {
+                "data": {
+                    "source": "Gilbert Collard",
+                    "target": "La Manif Pour Tous",
+                    "label": ""
                 }
             },
             {
@@ -571,6 +606,41 @@
                     "source": "Nicolas Dupont-Aignan",
                     "target": "Marine Le Pen",
                     "label": "Soutien lors du second tour des Pr\u00e9sidentielles 2017"
+                }
+            },
+            {
+                "data": {
+                    "source": "Europe des Nations et des Libert\u00e9s",
+                    "target": "Front National",
+                    "label": ""
+                }
+            },
+            {
+                "data": {
+                    "source": "Europe des Nations et des Libert\u00e9s",
+                    "target": "Jean-Fran\u00e7ois Jalkh",
+                    "label": ""
+                }
+            },
+            {
+                "data": {
+                    "source": "Europe des Nations et des Libert\u00e9s",
+                    "target": "Marine Le Pen",
+                    "label": ""
+                }
+            },
+            {
+                "data": {
+                    "source": "Europe des Nations et des Libert\u00e9s",
+                    "target": "Florian Philippot",
+                    "label": ""
+                }
+            },
+            {
+                "data": {
+                    "source": "Europe des Nations et des Libert\u00e9s",
+                    "target": "Rassemblement Bleu Marine",
+                    "label": ""
                 }
             },
             {
@@ -681,6 +751,13 @@
             {
                 "data": {
                     "source": "Front National",
+                    "target": "Souverainet\u00e9, identit\u00e9 et libert\u00e9s",
+                    "label": "Ancien alli\u00e9"
+                }
+            },
+            {
+                "data": {
+                    "source": "Front National",
                     "target": "Philippe Vardon",
                     "label": "Membre"
                 }
@@ -724,7 +801,7 @@
                 "data": {
                     "source": "Marine Le Pen",
                     "target": "Florian Philippot",
-                    "label": null
+                    "label": ""
                 }
             },
             {
@@ -736,16 +813,30 @@
             },
             {
                 "data": {
+                    "source": "Ligue du Sud",
+                    "target": "Souverainet\u00e9, identit\u00e9 et libert\u00e9s",
+                    "label": "Accord \u00e9lectoral lors des l\u00e9gislatives 2017"
+                }
+            },
+            {
+                "data": {
+                    "source": "La Manif Pour Tous",
+                    "target": "Marion Mar\u00e9chal-Le Pen",
+                    "label": ""
+                }
+            },
+            {
+                "data": {
                     "source": "Marion Mar\u00e9chal-Le Pen",
                     "target": "Philippe Vardon",
-                    "label": null
+                    "label": ""
                 }
             },
             {
                 "data": {
                     "source": "Marion Mar\u00e9chal-Le Pen",
                     "target": "Philippe de Villiers",
-                    "label": null
+                    "label": ""
                 }
             },
             {
@@ -780,7 +871,7 @@
                 "data": {
                     "source": "Robert M\u00e9nard",
                     "target": "Philippe de Villiers",
-                    "label": null
+                    "label": ""
                 }
             },
             {
@@ -795,6 +886,13 @@
                     "source": "Florian Philippot",
                     "target": "Rassemblement Bleu Marine",
                     "label": "Porte-parole"
+                }
+            },
+            {
+                "data": {
+                    "source": "Rassemblement Bleu Marine",
+                    "target": "Souverainet\u00e9, identit\u00e9 et libert\u00e9s",
+                    "label": "Ancien membre"
                 }
             }
         ]

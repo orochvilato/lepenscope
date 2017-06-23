@@ -94,15 +94,17 @@ $(function(){
     };
 
     var initLabels = function() {
-      cy.batch(function() {
-        nhood.nodes().forEach(function(n){
-          var l = n.data('orgLabel');
-          var edges = n.edgesWith(node);
-          edges.edges().forEach(function(e){
-            if (e.data('label') !== '') {
-              n.data('label',l+' ('+e.data('label')+')');
-            }
-          })
+      return Promise.resolve().then(function() {
+        cy.batch(function() {
+          nhood.nodes().forEach(function(n){
+            var l = n.data('orgLabel');
+            var edges = n.edgesWith(node);
+            edges.edges().forEach(function(e){
+              if (e.data('label') !== '') {
+                n.data('label',l+' ('+e.data('label')+')');
+              }
+            })
+          });
         });
       });
 
@@ -110,47 +112,33 @@ $(function(){
     var runLayout = function(){
       var p = node.data('orgPos');
 
-      var l2 = nhood.filter(':visible').makeLayout({
+      var l = nhood.filter(':visible').makeLayout({
           name: 'cose-bilkent',
           nodeRepulsion: 10000,
           animate: true
       });
-      var l = nhood.filter(':visible').makeLayout({
-        name: 'concentric',
-        fit: false,
-        animate: true,
-        padding:30,
-        minNodeSpacing: 30,
-        animationDuration: aniDur,
-        animationEasing: easing,
-        boundingBox: {
-          x1: p.x - 1,
-          x2: p.x + 1,
-          y1: p.y - 1,
-          y2: p.y + 1
-        },
-        avoidOverlap: false,
 
-        concentric: function( ele ){
-          if( ele.same( node ) ){
-            return 3;
-          } else if( ele.data('type')==='personne'){
-            return 1;
-          } else {
-            return 1;
-          }
-        },
-        levelWidth: function(){ return 1; },
-        padding: layoutPadding
-      });
 
       var promise = cy.promiseOn('layoutstop');
+
 
       l.run();
 
       return promise;
     };
 
+    var recenter = function() {
+      var x_c = node.data('orgPos').x - node.position().x;
+      var y_c = node.data('orgPos').y - node.position().y;
+      return Promise.resolve().then(function() {
+        cy.batch(function () {
+          nhood.filter(':visible').nodes().forEach(function(n) {
+              var _p = n.position()
+              n.position({x:_p.x+x_c,y:_p.y+y_c});
+          });
+        });
+      });
+    }
     var fit = function(){
       return cy.animation({
         fit: {
@@ -286,6 +274,7 @@ $(function(){
         ready: layoutready,
         name: 'cose-bilkent',
         nodeRepulsion: 10000,
+        idealEdgeLength: 100,
         animate: false
       },
       style: styleJson,

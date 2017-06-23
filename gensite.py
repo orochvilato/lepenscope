@@ -8,6 +8,14 @@ APIKEY = 'AIzaSyAl3tgYstQjvgM0krud4pz-PxCo-CXK3I0'
 
 pics = {}
 
+import unicodedata
+def strip_accents(s):
+   return ''.join(c for c in unicodedata.normalize('NFD', s)
+                  if unicodedata.category(c) != 'Mn')
+def normalize(s):
+    return strip_accents(s).replace(' ','').lower() if s else s
+
+
 from fuzzywuzzy import fuzz
 def findPic(nom):
     found = False
@@ -44,15 +52,61 @@ def loadImages():
         open('images/%s' % image['name'],'w').write(r.content)
 
 loadImages()
-candidats = []
-import requests
-response = requests.get('https://docs.google.com/spreadsheets/d/1FFz6SUbp1NzpijHxYXBqMkOdjpui6V5fPP5wp4C7CBU/export?format=xlsx&id=1FFz6SUbp1NzpijHxYXBqMkOdjpui6V5fPP5wp4C7CBU')
-from openpyxl import load_workbook
-from cStringIO import StringIO
-from textwrap import wrap
 
-f = StringIO(response.content)
-wb = load_workbook(f)
+def parsegdoc(path):
+    import requests
+    import re
+    response = requests.get(path)
+    from openpyxl import load_workbook
+    from cStringIO import StringIO
+    from textwrap import wrap
+    def parseSheet(ws):
+        fields=[]
+        fgroup = None
+        for i,f in enumerate(ws.iter_cols(max_row=2)):
+            fgroup = normalize(f[0].value) or fgroup
+            field = normalize(f[1].value)
+            m = re.match(r'([^\(]+)\(([^/)]+)\)',field)
+            if m:
+                fdesc = {'id':"%s.%s" % (fgroup,m.groups()[0]), 'data':['nom',m.groups()[1]] }
+            else:
+                fdesc = {'id':"%s.%s" % (fgroup,field) }
+            fields.append(fdesc)
+
+        sheetdata = []
+        for j,row in enumerate(ws.iter_rows(min_row=3)):
+            item = {}
+            for i in range(len(fields)):
+                field = fields[i]
+
+                if not isinstance(row[i].value,basestring):
+                    values = row[i].value
+                else:
+                    ritems = row[i].value.split('\n')
+                    values = []
+                    for ritem in ritems:
+                        if 'data' in field.keys():
+                            m = re.match(r'([^\(]+)\(([^/)]+)\)',ritem)
+                            if m:
+                                values.append(dict((fk,m.groups()[fi]) for fi,fk in enumerate(field['data'])))
+                            else:
+                                values.append(dict((fk,'PB') for fk in field['data']))
+                        else:
+                            values.append(ritem)
+                    if len(values) == 1:
+                        values = values[0]
+                item[fields[i]['id']] = values
+            sheetdata.append(item)
+        return sheetdata
+
+    f = StringIO(response.content)
+    wb = load_workbook(f)
+    data = {}
+    for k in wb.get_sheet_names():
+        data[k] = parseSheet(wb[k])
+    return data
+
+wb = parsegdoc('https://docs.google.com/spreadsheets/d/1FFz6SUbp1NzpijHxYXBqMkOdjpui6V5fPP5wp4C7CBU/export?format=xlsx&id=1FFz6SUbp1NzpijHxYXBqMkOdjpui6V5fPP5wp4C7CBU')
 wsPers = wb[u'Personnalités']
 wsMouv = wb['Mouvements']
 wsLien = wb['Liens']
@@ -60,22 +114,12 @@ wsLegeC = wb[u'LégendeCouleurs']
 wsLegeL = wb[u'LégendeLiens']
 
 
-
-couleurs = {
-    'Souverainiste':'#374682',
-    'Identitaire':'#915537',
-    'Intégriste': '#913773'
-}
 couleur_autres = '#414141'
 personnes = {}
 mouvements = {}
 liens = []
 id = 1
 
-import unicodedata
-def strip_accents(s):
-   return ''.join(c for c in unicodedata.normalize('NFD', s)
-                  if unicodedata.category(c) != 'Mn')
 
 def getId(n):
     return n.lower().replace('-','').replace(' ','')
@@ -83,53 +127,45 @@ def getId(n):
 elements = {'nodes':[],'edges':[]}
 
 nodeWeights = {}
-for i,row in enumerate(wsLien.rows):
-    if i<2:
-        continue
-    nodeWeights[row[0].value] = nodeWeights.get(row[0].value,0) + 1
-    nodeWeights[row[1].value] = nodeWeights.get(row[1].value,0) + 1
-    elements['edges'].append({'data':{'source':row[0].value,'target':row[1].value,'label':row[3].value}})
+for lien in wsLien:
+    nodeWeights[lien['noms.nom1']] = nodeWeights.get(lien['noms.nom1'],0) + 1
+    nodeWeights[lien['noms.nom2']] = nodeWeights.get(lien['noms.nom2'],0) + 1
+    elements['edges'].append({'data':{'source':lien['noms.nom1'],'target':lien['noms.nom2'],'label':lien['description.desccarte'] or ''}})
 
 categories = []
 nodesimages = []
 
-for i,row in enumerate(wsLegeC.rows):
-    if i<2:
-        continue
-    categories.append(dict(id=strip_accents(row[2].value),nom=row[2].value,couleur=row[0].value))
+for leg in wsLegeC:
+    categories.append(dict(id=strip_accents(leg['noms.nomgroupe']),nom=leg['noms.nomgroupe'],couleur=leg['noms.codecouleur']))
 
-for i,row in enumerate(wsPers.rows):
-    if i<2:
-        continue
-    idname = getId(row[0].value)
+for pers in wsPers:
+    idname = getId(pers['intro.nom'])
     node = {'data':
-                {'id':row[0].value,
-                 'label':row[0].value,
+                {'id':pers['intro.nom'],
+                 'label':pers['intro.nom'],
                  'type':'personne',
-                 'cat':row[1].value,
-                 'poids':nodeWeights.get(row[0].value,0)
+                 'cat':pers['intro.categorie'],
+                 'poids':nodeWeights.get(pers['intro.nom'],0)
                 }}
     pic = findPic(idname)
     if pic:
         node['data'].update({'haspic':1})
-        nodesimages.append(dict(id=row[0].value,image='images/'+pic))
+        nodesimages.append(dict(id=pers['intro.nom'],image='images/'+pic))
     elements['nodes'].append(node)
 
-for i,row in enumerate(wsMouv.rows):
-    if i<2:
-        continue
-    idname = getId(row[0].value)
+for mouv in wsMouv:
+    idname = getId(mouv['intro.nom'])
     node = {'data':
-                {'id':row[0].value,
-                 'label':row[0].value,
+                {'id':mouv['intro.nom'],
+                 'label':mouv['intro.nom'],
                  'type':'mouvement',
-                 'cat':row[1].value,
-                 'poids':nodeWeights.get(row[0].value,0)
+                 'cat':mouv['intro.categorie'],
+                 'poids':nodeWeights.get(mouv['intro.nom'],0)
                 }}
     pic = findPic(idname)
     if pic:
         node['data'].update({'haspic':1})
-        nodesimages.append(dict(id=row[0].value,image='images/'+pic))
+        nodesimages.append(dict(id=mouv['intro.nom'],image='images/'+pic))
 
     elements['nodes'].append(node)
 
