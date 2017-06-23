@@ -295,6 +295,7 @@ $(function(){
       boxSelectionEnabled: false,
       minZoom:.5,
       maxZoom:3,
+      wheelSensitivity:0.3,
       autoungrabify: true
     });
 

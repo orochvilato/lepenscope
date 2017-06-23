@@ -7,6 +7,16 @@ import os
 APIKEY = 'AIzaSyAl3tgYstQjvgM0krud4pz-PxCo-CXK3I0'
 
 pics = {}
+
+from fuzzywuzzy import fuzz
+def findPic(nom):
+    found = False
+    for pic in pics.keys():
+        if fuzz.ratio(pic,nom)>90:
+            found = True
+            break
+    return pics[pic] if found else None
+
 import re
 def loadImages():
     loadedimages = os.listdir('images/')
@@ -46,7 +56,9 @@ wb = load_workbook(f)
 wsPers = wb[u'Personnalités']
 wsMouv = wb['Mouvements']
 wsLien = wb['Liens']
-wsLege = wb[u'Légende']
+wsLegeC = wb[u'LégendeCouleurs']
+wsLegeL = wb[u'LégendeLiens']
+
 
 
 couleurs = {
@@ -76,12 +88,12 @@ for i,row in enumerate(wsLien.rows):
         continue
     nodeWeights[row[0].value] = nodeWeights.get(row[0].value,0) + 1
     nodeWeights[row[1].value] = nodeWeights.get(row[1].value,0) + 1
-    elements['edges'].append({'data':{'source':row[0].value,'target':row[1].value,'label':'\n'.join(row[2].value.split(' ') if row[2].value else "")}})
+    elements['edges'].append({'data':{'source':row[0].value,'target':row[1].value,'label':row[3].value}})
 
 categories = []
 nodesimages = []
 
-for i,row in enumerate(wsLege.rows):
+for i,row in enumerate(wsLegeC.rows):
     if i<2:
         continue
     categories.append(dict(id=strip_accents(row[2].value),nom=row[2].value,couleur=row[0].value))
@@ -97,9 +109,10 @@ for i,row in enumerate(wsPers.rows):
                  'cat':row[1].value,
                  'poids':nodeWeights.get(row[0].value,0)
                 }}
-    if idname in pics.keys():
+    pic = findPic(idname)
+    if pic:
         node['data'].update({'haspic':1})
-        nodesimages.append(dict(id=row[0].value,image='images/'+pics[idname]))
+        nodesimages.append(dict(id=row[0].value,image='images/'+pic))
     elements['nodes'].append(node)
 
 for i,row in enumerate(wsMouv.rows):
@@ -113,9 +126,10 @@ for i,row in enumerate(wsMouv.rows):
                  'cat':row[1].value,
                  'poids':nodeWeights.get(row[0].value,0)
                 }}
-    if idname in pics.keys():
+    pic = findPic(idname)
+    if pic:
         node['data'].update({'haspic':1})
-        nodesimages.append(dict(id=row[0].value,image='images/'+pics[idname]))
+        nodesimages.append(dict(id=row[0].value,image='images/'+pic))
 
     elements['nodes'].append(node)
 

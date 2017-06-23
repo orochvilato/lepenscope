@@ -295,6 +295,7 @@ $(function(){
       boxSelectionEnabled: false,
       minZoom:.5,
       maxZoom:3,
+      wheelSensitivity:0.3,
       autoungrabify: true
     });
 
@@ -448,6 +449,7 @@ $(function(){
     var Identitaire = $('#Identitaire').is(':checked');
     var Integriste = $('#Integriste').is(':checked');
     var Complotiste = $('#Complotiste').is(':checked');
+    var Autres = $('#Autres').is(':checked');
     
 
     cy.batch(function(){
@@ -472,6 +474,7 @@ $(function(){
             || (cat === 'Identitaire' && !Identitaire)
             || (cat === 'Intégriste' && !Integriste)
             || (cat === 'Complotiste' && !Complotiste)
+            || (cat === 'Autres' && !Autres)
             
           ){
             filter();

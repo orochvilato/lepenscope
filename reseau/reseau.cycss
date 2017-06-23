@@ -81,6 +81,13 @@ node[cat = "Complotiste"] {
 	text-border-color: #647D55;
 }
 
+node[cat = "Autres"] {
+	border-color: #414141;
+	background-color: #414141;
+	text-background-color: #414141;
+	text-border-color: #414141;
+}
+
 
 
 
@@ -95,6 +102,10 @@ node[id = "Marion Maréchal-Le Pen"] {
 
 node[id = "Bloc Identitaire"] {
 	background-image: images/logo_BlocIdentitaire.png;
+}
+
+node[id = "Comités « Jeanne, au secours ! »"] {
+	background-image: images/logo_ComitésJeanne,AuSecours!.png;
 }
 
 node[id = "Debout la France !"] {
@@ -121,6 +132,18 @@ node[id = "Ligue du Sud"] {
 	background-image: images/logo_LigueDuSud.png;
 }
 
+node[id = "La Manif Pour Tous"] {
+	background-image: images/logo_LaManifPourTous.png;
+}
+
+node[id = "Mouvement National Républicain"] {
+	background-image: images/logo_MouvementNationalRépublicain.png;
+}
+
+node[id = "Mouvement Pour la France"] {
+	background-image: images/logo_MouvementPourLaFrance.png;
+}
+
 node[id = "Ordre Nouveau"] {
 	background-image: images/logo_OrdreNouveau.png;
 }
@@ -129,8 +152,16 @@ node[id = "Oz ta droite !"] {
 	background-image: images/logo_OzTaDroite!.png;
 }
 
+node[id = "Parti Nationaliste Français"] {
+	background-image: images/logo_PartiNationalisteFrançais.png;
+}
+
 node[id = "Rassemblement Bleu Marine"] {
 	background-image: images/logo_RassemblementBleuMarine.png;
+}
+
+node[id = "Souveraineté, identité et libertés"] {
+	background-image: images/logo_SouverainetéIdentitéEtLibertés.png;
 }
 
 

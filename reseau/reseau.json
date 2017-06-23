@@ -248,7 +248,7 @@
             },
             {
                 "data": {
-                    "cat": null,
+                    "cat": "Autres",
                     "type": "mouvement",
                     "id": "Agence Riwal",
                     "poids": 1,
@@ -267,16 +267,17 @@
             },
             {
                 "data": {
-                    "cat": "Identitaire",
+                    "haspic": 1,
+                    "label": "Comit\u00e9s \u00ab Jeanne, au secours ! \u00bb",
                     "type": "mouvement",
                     "id": "Comit\u00e9s \u00ab Jeanne, au secours ! \u00bb",
                     "poids": 1,
-                    "label": "Comit\u00e9s \u00ab Jeanne, au secours ! \u00bb"
+                    "cat": "Identitaire"
                 }
             },
             {
                 "data": {
-                    "cat": null,
+                    "cat": "Autres",
                     "type": "mouvement",
                     "id": "Cotelec",
                     "poids": 1,
@@ -345,29 +346,32 @@
             },
             {
                 "data": {
-                    "cat": "Int\u00e9griste",
+                    "haspic": 1,
+                    "label": "La Manif Pour Tous",
                     "type": "mouvement",
                     "id": "La Manif Pour Tous",
                     "poids": 0,
-                    "label": "La Manif Pour Tous"
+                    "cat": "Int\u00e9griste"
                 }
             },
             {
                 "data": {
-                    "cat": "Identitaire",
+                    "haspic": 1,
+                    "label": "Mouvement National R\u00e9publicain",
                     "type": "mouvement",
                     "id": "Mouvement National R\u00e9publicain",
                     "poids": 1,
-                    "label": "Mouvement National R\u00e9publicain"
+                    "cat": "Identitaire"
                 }
             },
             {
                 "data": {
-                    "cat": "Souverainiste",
+                    "haspic": 1,
+                    "label": "Mouvement Pour la France",
                     "type": "mouvement",
                     "id": "Mouvement Pour la France",
                     "poids": 1,
-                    "label": "Mouvement Pour la France"
+                    "cat": "Souverainiste"
                 }
             },
             {
@@ -392,11 +396,12 @@
             },
             {
                 "data": {
-                    "cat": "Identitaire",
+                    "haspic": 1,
+                    "label": "Parti Nationaliste Fran\u00e7ais",
                     "type": "mouvement",
                     "id": "Parti Nationaliste Fran\u00e7ais",
                     "poids": 1,
-                    "label": "Parti Nationaliste Fran\u00e7ais"
+                    "cat": "Identitaire"
                 }
             },
             {
@@ -411,11 +416,12 @@
             },
             {
                 "data": {
-                    "cat": "Identitaire",
+                    "haspic": 1,
+                    "label": "Souverainet\u00e9, identit\u00e9 et libert\u00e9s",
                     "type": "mouvement",
                     "id": "Souverainet\u00e9, identit\u00e9 et libert\u00e9s",
                     "poids": 0,
-                    "label": "Souverainet\u00e9, identit\u00e9 et libert\u00e9s"
+                    "cat": "Identitaire"
                 }
             }
         ],
@@ -424,7 +430,7 @@
                 "data": {
                     "source": "Agence Riwal",
                     "target": "Fr\u00e9d\u00e9ric Chatillon",
-                    "label": ""
+                    "label": null
                 }
             },
             {
@@ -438,21 +444,21 @@
                 "data": {
                     "source": "Marie-Christine Arnautu",
                     "target": "Jean-Marie Le Pen",
-                    "label": ""
+                    "label": null
                 }
             },
             {
                 "data": {
                     "source": "Nicolas Bay",
                     "target": "Front National",
-                    "label": "Secr\u00e9taire\ng\u00e9n\u00e9ral"
+                    "label": "Secr\u00e9taire g\u00e9n\u00e9ral"
                 }
             },
             {
                 "data": {
                     "source": "Nicolas Bay",
                     "target": "Bruno M\u00e9gret",
-                    "label": ""
+                    "label": null
                 }
             },
             {
@@ -466,7 +472,7 @@
                 "data": {
                     "source": "Yvan Benedetti",
                     "target": "Bruno Golnisch",
-                    "label": ""
+                    "label": null
                 }
             },
             {
@@ -487,7 +493,7 @@
                 "data": {
                     "source": "Jacques Bompard",
                     "target": "Bloc Identitaire",
-                    "label": ""
+                    "label": null
                 }
             },
             {
@@ -501,7 +507,7 @@
                 "data": {
                     "source": "Jacques Bompard",
                     "target": "Ligue du Sud",
-                    "label": "Pr\u00e9sident\net\nfondateur"
+                    "label": "Pr\u00e9sident et fondateur"
                 }
             },
             {
@@ -515,14 +521,14 @@
                 "data": {
                     "source": "Fr\u00e9d\u00e9ric Chatillon",
                     "target": "Groupe Union D\u00e9fense",
-                    "label": "Ancien\npr\u00e9sident"
+                    "label": "Ancien pr\u00e9sident"
                 }
             },
             {
                 "data": {
                     "source": "Fr\u00e9d\u00e9ric Chatillon",
                     "target": "Marine Le Pen",
-                    "label": ""
+                    "label": null
                 }
             },
             {
@@ -536,14 +542,14 @@
                 "data": {
                     "source": "Comit\u00e9s \u00ab Jeanne, au secours ! \u00bb",
                     "target": "Jean-Marie Le Pen",
-                    "label": "Pr\u00e9sident\net\nfondateur"
+                    "label": "Pr\u00e9sident et fondateur"
                 }
             },
             {
                 "data": {
                     "source": "Gilbert Collard",
                     "target": "Rassemblement Bleu Marine",
-                    "label": "Secr\u00e9taire\ng\u00e9n\u00e9ral"
+                    "label": "Secr\u00e9taire g\u00e9n\u00e9ral"
                 }
             },
             {
@@ -564,7 +570,7 @@
                 "data": {
                     "source": "Nicolas Dupont-Aignan",
                     "target": "Marine Le Pen",
-                    "label": "Soutien\nlors\ndu\nsecond\ntour\ndes\nPr\u00e9sidentielles\n2017"
+                    "label": "Soutien lors du second tour des Pr\u00e9sidentielles 2017"
                 }
             },
             {
@@ -578,14 +584,14 @@
                 "data": {
                     "source": "Front National",
                     "target": "Front National Jeunesse",
-                    "label": "Mouvement\nde\njeunesse\naffili\u00e9"
+                    "label": "Mouvement de jeunesse affili\u00e9"
                 }
             },
             {
                 "data": {
                     "source": "Front National",
                     "target": "Bruno Golnisch",
-                    "label": "Ancien\nvice-pr\u00e9sident"
+                    "label": "Ancien vice-pr\u00e9sident"
                 }
             },
             {
@@ -599,7 +605,7 @@
                 "data": {
                     "source": "Front National",
                     "target": "Jean-Marie Le Pen",
-                    "label": "Ancien\npr\u00e9sident"
+                    "label": "Ancien pr\u00e9sident"
                 }
             },
             {
@@ -613,14 +619,14 @@
                 "data": {
                     "source": "Front National",
                     "target": "Marion Mar\u00e9chal-Le Pen",
-                    "label": "Ancienne\nmembre"
+                    "label": "Ancienne membre"
                 }
             },
             {
                 "data": {
                     "source": "Front National",
                     "target": "Emmanuelle M\u00e9nard",
-                    "label": "D\u00e9put\u00e9e\nsoutenue"
+                    "label": "D\u00e9put\u00e9e soutenue"
                 }
             },
             {
@@ -634,7 +640,7 @@
                 "data": {
                     "source": "Front National",
                     "target": "Ordre Nouveau",
-                    "label": "Mouvement\nfondateur"
+                    "label": "Organisation fondatrice"
                 }
             },
             {
@@ -669,7 +675,7 @@
                 "data": {
                     "source": "Front National",
                     "target": "Wallerand de Saint-Just",
-                    "label": "Tr\u00e9sorier\nnational"
+                    "label": "Tr\u00e9sorier national"
                 }
             },
             {
@@ -683,7 +689,7 @@
                 "data": {
                     "source": "Groupe Union D\u00e9fense",
                     "target": "Wallerand de Saint-Just",
-                    "label": "Ancien\nparticipant"
+                    "label": "Ancien participant"
                 }
             },
             {
@@ -697,28 +703,28 @@
                 "data": {
                     "source": "Jean-Marie Le Pen",
                     "target": "Marine Le Pen",
-                    "label": "P\u00e8re\net\nfille"
+                    "label": "P\u00e8re et fille"
                 }
             },
             {
                 "data": {
                     "source": "Jean-Marie Le Pen",
                     "target": "Marion Mar\u00e9chal-Le Pen",
-                    "label": "Grand-p\u00e8re\net\npetite-fille"
+                    "label": "Grand-p\u00e8re et petite-fille"
                 }
             },
             {
                 "data": {
                     "source": "Marine Le Pen",
                     "target": "Marion Mar\u00e9chal-Le Pen",
-                    "label": "Tante\net\nni\u00e8ce"
+                    "label": "Tante et ni\u00e8ce"
                 }
             },
             {
                 "data": {
                     "source": "Marine Le Pen",
                     "target": "Florian Philippot",
-                    "label": ""
+                    "label": null
                 }
             },
             {
@@ -732,14 +738,14 @@
                 "data": {
                     "source": "Marion Mar\u00e9chal-Le Pen",
                     "target": "Philippe Vardon",
-                    "label": ""
+                    "label": null
                 }
             },
             {
                 "data": {
                     "source": "Marion Mar\u00e9chal-Le Pen",
                     "target": "Philippe de Villiers",
-                    "label": ""
+                    "label": null
                 }
             },
             {
@@ -774,14 +780,14 @@
                 "data": {
                     "source": "Robert M\u00e9nard",
                     "target": "Philippe de Villiers",
-                    "label": ""
+                    "label": null
                 }
             },
             {
                 "data": {
                     "source": "Mouvement Pour la France",
                     "target": "Philippe de Villiers",
-                    "label": "Pr\u00e9sident\net\nfondateur"
+                    "label": "Pr\u00e9sident et fondateur"
                 }
             },
             {
