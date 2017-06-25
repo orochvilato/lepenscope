@@ -90,7 +90,7 @@ def parsegdoc(path):
                             if m:
                                 values.append(dict((fk,m.groups()[fi]) for fi,fk in enumerate(field['data'])))
                             else:
-                                values.append(dict((fk,'PB') for fk in field['data']))
+                                values.append(ritem) #dict((fk,'PB') for fk in field['data']))
                         else:
                             values.append(ritem)
                     if len(values) == 1:
@@ -113,6 +113,7 @@ wsLien = wb['Liens']
 wsLegeC = wb[u'LégendeCouleurs']
 wsLegeL = wb[u'LégendeLiens']
 
+print wsLien
 
 couleur_autres = '#414141'
 personnes = {}
@@ -178,7 +179,7 @@ for mouv in wsMouv:
         nodesimages.append(dict(id=mouv['intro.nom'],image='images/'+pic))
     else:
         node['data']['pic'] = 'images/vide.png'
-        
+
     elements['nodes'].append(node)
 
 
