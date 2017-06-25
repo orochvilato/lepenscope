@@ -156,6 +156,8 @@ for pers in wsPers:
         node['data'].update({'haspic':1})
         node['data']['pic'] = 'images/'+pic
         nodesimages.append(dict(id=pers['intro.nom'],image='images/'+pic))
+    else:
+        node['data']['pic'] = 'images/vide.png'
     elements['nodes'].append(node)
 
 for mouv in wsMouv:
@@ -174,7 +176,9 @@ for mouv in wsMouv:
         node['data'].update({'haspic':1})
         node['data']['pic'] = 'images/'+pic
         nodesimages.append(dict(id=mouv['intro.nom'],image='images/'+pic))
-
+    else:
+        node['data']['pic'] = 'images/vide.png'
+        
     elements['nodes'].append(node)
 
 
