@@ -170,10 +170,17 @@ $(function(){
       return Promise.all(ficheHTML);
 
     }
+    var resizecy = function() {
+      $('#cy').animate({
+        marginTop: '20vh',
+        height: '80vh'
+      }, 'fast');
+    }
 
     return Promise.resolve()
       .then( reset )
       .then( initLabels )
+      .then( resizecy )
       .then( runLayout )
       .then( loadFiche )
       .then( fit )
@@ -238,12 +245,21 @@ $(function(){
       });
     };
     var scrolltop = function() {
+
       $('html, body').animate({
         scrollTop: 0,
       }, 'slow');
     }
 
+    var resizecy = function() {
+      $('#cy').animate({
+        marginTop: '7.5vh',
+        height: '92.5vh'
+      }, 'fast');
+    }
+
     return Promise.resolve()
+      .then( resizecy )
       .then( resetHighlight )
       .then( hideOthers )
       .then( scrolltop )
@@ -293,19 +309,20 @@ $(function(){
         name: 'cose-bilkent',
         nodeRepulsion: 10000,
         idealEdgeLength: 80,
-        animate: false
+        animate: false,
+        fit: false
       },
       style: styleJson,
       elements: elements,
       motionBlur: true,
       selectionType: 'single',
       boxSelectionEnabled: false,
+      zoom:1.5,
       minZoom:.5,
       maxZoom:3,
       wheelSensitivity:0.3,
       autoungrabify: true
     });
-
     allNodes = cy.nodes();
     allEles = cy.elements();
     function layoutready(){
@@ -317,6 +334,9 @@ $(function(){
           y: p.y
         });
       });
+      //var j = cy.$("#j");
+      cy.center();
+
     };
     cy.on('free', 'node', function( e ){
       var n = e.cyTarget;
@@ -444,7 +464,7 @@ $(function(){
     }
   }
   $('#reset').on('click', function(){
-    cyreset()
+    cyreset();
   });
 
   $('#filters').on('click', 'input', function(){
