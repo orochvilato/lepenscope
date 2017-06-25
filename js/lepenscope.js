@@ -115,6 +115,7 @@ $(function(){
       var l = nhood.filter(':visible').makeLayout({
           name: 'cose-bilkent',
           nodeRepulsion: 10000,
+          idealEdgeLength: 100,
           animate: true
       });
 
@@ -151,20 +152,33 @@ $(function(){
     };
 
     var showOthersFaded = function(){
-      console.log('faded');
       return Promise.delay( 250 ).then(function(){
         cy.batch(function(){
           others.removeClass('hidden').addClass('faded');
         });
       });
     };
+    var loadFiche = function() {
+      var ficheHTML = $.ajax({
+          url: "fiches/"+node.data('shortId')+".html",
+          context: $('#fiche')
+      }).done(function(data) {
+        $( this ).replaceWith(data);
+        $('#fichetitle').goTo();
+      });
+
+      return Promise.all(ficheHTML);
+
+    }
 
     return Promise.resolve()
       .then( reset )
       .then( initLabels )
       .then( runLayout )
+      .then( loadFiche )
       .then( fit )
       .then( showOthersFaded );
+
 
   }
 
@@ -222,13 +236,17 @@ $(function(){
           n.data('label',n.data('orgLabel'));
         });
       });
-
-
     };
+    var scrolltop = function() {
+      $('html, body').animate({
+        scrollTop: 0,
+      }, 'slow');
+    }
 
     return Promise.resolve()
       .then( resetHighlight )
       .then( hideOthers )
+      .then( scrolltop )
       .then( restorePositions )
       .then( showOthers )
       .then( cyreset )
@@ -266,7 +284,7 @@ $(function(){
       //};
     });
 
-    loading.classList.add('loaded');
+    //loading.classList.add('loaded');
 
     cy = window.cy = cytoscape({
       container: document.getElementById('cy'),
@@ -274,7 +292,7 @@ $(function(){
         ready: layoutready,
         name: 'cose-bilkent',
         nodeRepulsion: 10000,
-        idealEdgeLength: 100,
+        idealEdgeLength: 80,
         animate: false
       },
       style: styleJson,
@@ -332,7 +350,7 @@ $(function(){
   }
 
   var lastSearch = '';
-  console.log('typeahead');
+
   $('#search').typeahead({
     minLength: 2,
     highlight: true,
@@ -476,61 +494,6 @@ $(function(){
 
   });
 
-  $('#filter').qtip({
-    position: {
-      my: 'top center',
-      at: 'bottom center',
-      adjust: {
-        method: 'shift'
-      },
-      viewport: true
-    },
 
-    show: {
-      event: 'click'
-    },
 
-    hide: {
-      event: 'unfocus'
-    },
-
-    style: {
-      classes: 'qtip-bootstrap qtip-filters',
-      tip: {
-        width: 16,
-        height: 8
-      }
-    },
-
-    content: $('#filters')
-  });
-
-  $('#about').qtip({
-    position: {
-      my: 'bottom center',
-      at: 'top center',
-      adjust: {
-        method: 'shift'
-      },
-      viewport: true
-    },
-
-    show: {
-      event: 'click'
-    },
-
-    hide: {
-      event: 'unfocus'
-    },
-
-    style: {
-      classes: 'qtip-bootstrap qtip-about',
-      tip: {
-        width: 16,
-        height: 8
-      }
-    },
-
-    content: $('#about-content')
-  });
 });

@@ -1,0 +1,34 @@
+<div id="fiche" class="block">
+<div id="fichetitle" class="pushpin-demo-nav" data-target="fiche">
+  <div class="nav-wrapper" style="background-color:#915537">
+    <div class="container">
+      <div class="row" style="margin-bottom:0px;">
+        <div class="col wlogo">
+          <a href="#" class="logo"><img src="images/photo_MarionMaréchalLePen.png" style="padding-top:0.75rem;" class="circle responsive-img"> <!-- notice the "circle" class -->
+          </a>
+        </div>
+        <div class="col white-text wresume">
+          <H4>Marion Maréchal-Le Pen</H4>
+          <span class="resume">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. consectetur adipiscing elit. Sed non risus. consectetur adipiscing elit. Sed non risus.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div style="width:100%;height:1200px;background-color:#AAA">
+    <H3> Reste de la fiche </H3>
+    <h4> Titre1</h4>
+    <h4> Titre2</h4>
+    <h4> Titre3</h4>
+  </div>
+</div>
+<script>
+$('#fichetitle').each(function() {
+  var $this = $(this);
+  var $target = $('#' + $(this).attr('data-target'));
+  $this.pushpin({
+    top: $target.offset().top,
+    bottom: $target.offset().top + $target.outerHeight() - $this.height()
+  });
+});
+</script>

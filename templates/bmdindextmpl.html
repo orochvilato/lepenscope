@@ -1,46 +1,187 @@
 {% extends "basetmpl.html" %}
 {% block head %}
 <style>
-#parent {
-  display: flex;
-  height: 80vh;
-}
 #cy {
-  flex: 1;
+  margin-top:15vh;
+  height: 85vh;
 }
-#infoelt {
-  width:0px;
+
+#fichetitle {
+  height:15vh;
+  width:100%;
+}
+.resume {
+  font-size:17px;
+  font-weight:500;
+}
+html, body, .block {
+ /* height: 100%; */
+}
+nav.pushpin-demo-nav {
+  z-index:1000;
+}
+nav ul li a:hover, nav ul li a.active {
+ background-color: rgba(0,0,0,.1);
+}
+.wlogo {
+  width: 15vh;
+  margin-left: auto;
+  left: auto;
+  right: auto;
+}
+.wresume {
+  width: 80vh;
+}
+
+footer {
+ padding-left: 0;
+}
+.logo {
+  font-size:30px;
+  font-weight:500;
+}
+.lepenscope {
+  background-color: #1F3356;
+}
+.lepenscope-light {
+  background-color: #dde3ee;
+}
+#sidenav-overlay {
+  display:none;
+}
+
+#filters {
+  padding-left:20px;
+  padding-top:70px;
+}
+#legende {
+  padding-left:20px;
+  padding-top:70px;
+}
+#search {
+  color: white;
+}
+
+#search {
+  width: 14em;
+  font-family: inherit;
+
+}
+
+.tt-dropdown-menu {
+  background: #1f3356;
+  color: white;
+  width: 18em;
+  line-height:2.5em;
+  border: 1px solid #ccc;
+  font-weight:400;
+  max-height: 80vh;
+  max-height: calc( 100vh - 4em );
+  overflow: auto;
+  margin-top: 0.1em;
+}
+
+.tt-dropdown-menu * {
+  margin: 0;
+  padding: 0;
+}
+
+.tt-suggestion {
+  margin: 0;
+  padding-left:10px;
+  padding-right:10px;
+  cursor: pointer;
+}
+.tt-suggestion:hover {
+  background: #6b7fa5;
+}
+
+.tt-suggestion + .tt-suggestion {
+  border-top: 1px solid #ccc;
+}
+#legende .collapsible-body {
+  line-height:1.5em;
+  padding:10px;
 }
 </style>
-<!--<link href="css/style.css" rel="stylesheet">-->
-{% endblock %}
-{% block navbuttons %}
-  <li><a href="#" id="reset"><i class="fa fa-arrows-h"></i></a></li>
-  <li><a href="#" id="filter"><i class="fa fa-filter"></i></a></li>
 {% endblock %}
 {% block content %}
-  <div id="parent">
-    <div id="cy"></div>
-    <div id="infoelt"></div>
-  </div>
-  <div id="loading">
-    <span class="fa fa-refresh fa-spin"></span>
-  </div>
-
-
-  <div id="filters">
-    <div class="filterset-section-title">Lepenscope</div>
-
+<div id="filters" class="side-nav">
     <div class="filtersets">
       <div class="filterset">
         <div class="filterset-title">Type</div>
         <input id="personne" type="checkbox" checked></input><label for="personne">Personne</label><br />
         <input id="mouvement" type="checkbox" checked></input><label for="mouvement">Mouvement</label><br />
       </div>
-      <div class="filterset right">
+      <div class="filterset">
         <div class="filterset-title">Catégories</div>
         {% for cat in categories %}<input id="{{ cat['id'] }}" type="checkbox" checked></input><label for="{{ cat['id'] }}">{{ cat['nom'] }}</label><br />
         {% endfor %}<input id="autre" type="checkbox" checked></input><label for="autre">Autre</label><br />
+      </div>
+    </div>
+  </div>
+
+  <div id="legende" class="side-nav">
+    <h3>Catégories</h3>
+    <ul class="collapsible popout" data-collapsible="expandable">
+      {% for cat in categories %}<li>
+        <div class="collapsible-header" style="background-color:{{ cat['couleur'] }};color:white;font-weight:500;">{{ cat['libelle'] }}</div>
+        <div class="collapsible-body"><span>{{ cat['desc'] }}</span></div>
+      </li>{% endfor %}
+    </ul>
+  </div>
+
+
+
+<div id="blue" class="block lepenscope-light">
+  <nav class="pushpin-demo-nav" data-target="blue">
+    <div class="nav-wrapper lepenscope">
+      <div class="container">
+        <a href="#" class="logo">Lepenscope</a>
+
+        <ul id="nav-mobile" class="right show-on-large">
+          <li><a href="#" id="reset"><i class="fa fa-arrows-h"></i></a></li>
+          <li><a href="#" data-activates="filters" id="filterbutton"><i class="fa fa-filter"></i></a></li>
+          <li><a href="#" data-activates="legende" id="legendebutton"><i class="material-icons">menu</i></a></li>
+          <li><div class="input-field">
+            <input id="search" type="search" required>
+            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          </div></li>
+        </ul>
+
+
+      </div>
+    </div>
+  </nav>
+  <div id="cy"></div>
+</div>
+<div id="fiche" class="block lepenscope-light">
+  <div id="fichetitle" class="pushpin-demo-nav" data-target="fiche">
+    <div class="nav-wrapper lepenscope">
+      <div class="container">
+        <div class="row" style="margin-bottom:0px;">
+          <div class="col wlogo">
+            <a href="#" class="logo"><img src="images/logo_BlocIdentitaire.png" style="padding-top:0.75rem;" class="circle responsive-img"> <!-- notice the "circle" class -->
+            </a>
+          </div>
+          <div class="col white-text">
+            <H4>TEST</H4>
+            <span class="resume">TEST</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div style="width:100%;height:1200px;color:blue"></div>
+</div>
+
+
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
 
       </div>
     </div>
@@ -67,5 +208,37 @@
 <script src="http://weaver.js.org/api/weaver.js-1.2.0/weaver.min.js"></script>
 <script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-spread/1.3.0/cytoscape-spread.js"></script>"
 <script src="js/lepenscope.js"></script>
+<script>
+(function($) {
+    $.fn.goTo = function() {
+      var offset = $(this).offset(); // Contains .top and .left
+      var bottom = $(window).height()-$(this).height();
+      console.log($(window).scrollTop(),$(this).height());
+      console.log(offset);
+      console.log(bottom);
+      $('html, body').animate({
+        scrollTop: offset.top-bottom,
+      }, 'slow');
 
+        return this; // for chaining...
+    }
+})(jQuery);
+
+</script>
+<script>
+// Pushpin Demo Init
+    if ($('.pushpin-demo-nav').length) {
+      $('.pushpin-demo-nav').each(function() {
+        var $this = $(this);
+        var $target = $('#' + $(this).attr('data-target'));
+        $this.pushpin({
+          top: $target.offset().top,
+          bottom: $target.offset().top + $target.outerHeight() - $this.height()
+        });
+      });
+    }
+    // Initialize collapse button
+    $("#filterbutton").sideNav({'edge': 'right'});
+    $("#legendebutton").sideNav({'edge': 'right'});
+</script>
 {% endblock %}

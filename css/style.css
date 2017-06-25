@@ -87,7 +87,7 @@ body.calc #loading {
 
 .tt-dropdown-menu {
   background: #fff;
-  width: 14em;
+  width: 20em;
   border: 1px solid #ccc;
   max-height: 80vh;
   max-height: calc( 100vh - 4em );

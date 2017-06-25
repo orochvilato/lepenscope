@@ -1,73 +1,155 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset=utf-8 />
-<meta name="viewport" content="width=device-width, user-scalable=no" />
+<html lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>Lepenscope</title>
 
-<title>Lepenscope</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="" sizes="32x32">
 
-  <!--<link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">-->
-  <link href="css/style.css" rel="stylesheet">
-  <!-- <link rel="shortcut icon" type="image/png" href="images/icon.png">-->
+  <!-- CSS  -->
+  <style>
+    #logo {
+      padding-left:30px;
+    }
+    .navbar {
+      background-color: #1F3356
+    }
+  </style>
+  
+<style>
+#cy {
+  margin-top:15vh;
+  height: 85vh;
+}
+
+#fichetitle {
+  height:15vh;
+  width:100%;
+}
+.resume {
+  font-size:17px;
+  font-weight:500;
+}
+html, body, .block {
+ /* height: 100%; */
+}
+nav.pushpin-demo-nav {
+  z-index:1000;
+}
+nav ul li a:hover, nav ul li a.active {
+ background-color: rgba(0,0,0,.1);
+}
+.wlogo {
+  width: 15vh;
+  margin-left: auto;
+  left: auto;
+  right: auto;
+}
+.wresume {
+  width: 80vh;
+}
+
+footer {
+ padding-left: 0;
+}
+.logo {
+  font-size:30px;
+  font-weight:500;
+}
+.lepenscope {
+  background-color: #1F3356;
+}
+.lepenscope-light {
+  background-color: #dde3ee;
+}
+#sidenav-overlay {
+  display:none;
+}
+
+#filters {
+  padding-left:20px;
+  padding-top:70px;
+}
+#legende {
+  padding-left:20px;
+  padding-top:70px;
+}
+#search {
+  color: white;
+}
+
+#search {
+  width: 14em;
+  font-family: inherit;
+
+}
+
+.tt-dropdown-menu {
+  background: #1f3356;
+  color: white;
+  width: 18em;
+  line-height:2.5em;
+  border: 1px solid #ccc;
+  font-weight:400;
+  max-height: 80vh;
+  max-height: calc( 100vh - 4em );
+  overflow: auto;
+  margin-top: 0.1em;
+}
+
+.tt-dropdown-menu * {
+  margin: 0;
+  padding: 0;
+}
+
+.tt-suggestion {
+  margin: 0;
+  padding-left:10px;
+  padding-right:10px;
+  cursor: pointer;
+}
+.tt-suggestion:hover {
+  background: #6b7fa5;
+}
+
+.tt-suggestion + .tt-suggestion {
+  border-top: 1px solid #ccc;
+}
+#legende .collapsible-body {
+  line-height:1.5em;
+  padding:10px;
+}
+</style>
+
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+  <!--
+  <div class="navbar-fixed">
+    <nav class="navbar">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Lepenscope</a>
+      <ul class="right hide-on-med-and-down">
+        
+        
+      </ul>
+    </div>
+  </nav>
+
+</div>-->
 </head>
-<body>
-  <div id="cy"></div>
-  <div id="loading">
-    <span class="fa fa-refresh fa-spin"></span>
-  </div>
-
-  <div id="search-wrapper">
-    <input type="text" class="form-control" id="search" placeholder="&#xf002; Search">
-  </div>
-
-  <div id="info">
-  </div>
-
-
-  <script src="https://use.fontawesome.com/6f4c3160b1.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
-  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.1.2/cytoscape.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/basic/jquery.qtip.min.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/basic/jquery.qtip.min.css" rel="stylesheet" type="text/css" />
-  <script src="js/cytoscape-qtip.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.5.0/bluebird.min.js"></script>
-  <!--<script src="bootstrap.min.js"></script>-->
-  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>-->
-  <script src="js/typeahead.bundle.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
-  <script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-cose-bilkent/1.6.5/cytoscape-cose-bilkent.js"></script>
-  <script src="js/lepenscope.js"></script>
-
-  <button id="reset" class="btn btn-default"><i class="fa fa-arrows-h"></i></button>
-
-  <button id="filter" class="btn btn-default"><i class="fa fa-filter"></i></button>
-
-  <button id="about" class="btn btn-default"><i class="fa fa-info"></i></button>
-
-  <div id="about-content">
-    <p>This app was made using <a target="_blank" href="http://js.cytoscape.org">Cytoscape.js <i class="fa fa-external-link"></i></a>.</p>
-
-    <p><a target="_blank" href="https://www.amazon.ca/Cheese-Connoisseurs-Guide-Worlds-Best/dp/1400050340/ref=sr_1_3?s=books&ie=UTF8&qid=1416109370&sr=1-3">Data reference <i class="fa fa-external-link"></i></a></p>
-  </div>
-
-  <div id="filters">
-    <div class="filterset-section-title">Lepenscope</div>
-
+<body style="background-color:#dde3ee;">
+      
+<div id="filters" class="side-nav">
     <div class="filtersets">
       <div class="filterset">
         <div class="filterset-title">Type</div>
         <input id="personne" type="checkbox" checked></input><label for="personne">Personne</label><br />
         <input id="mouvement" type="checkbox" checked></input><label for="mouvement">Mouvement</label><br />
       </div>
-      <div class="filterset right">
+      <div class="filterset">
         <div class="filterset-title">Catégories</div>
         <input id="Souverainiste" type="checkbox" checked></input><label for="Souverainiste">Souverainiste</label><br />
         <input id="Identitaire" type="checkbox" checked></input><label for="Identitaire">Identitaire</label><br />
@@ -75,24 +157,149 @@
         <input id="Complotiste" type="checkbox" checked></input><label for="Complotiste">Complotiste</label><br />
         <input id="Autres" type="checkbox" checked></input><label for="Autres">Autres</label><br />
         <input id="autre" type="checkbox" checked></input><label for="autre">Autre</label><br />
+      </div>
+    </div>
+  </div>
+
+  <div id="legende" class="side-nav">
+    <h3>Catégories</h3>
+    <ul class="collapsible popout" data-collapsible="expandable">
+      <li>
+        <div class="collapsible-header" style="background-color:#374682;color:white;font-weight:500;">Les souverainistes</div>
+        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.</span></div>
+      </li><li>
+        <div class="collapsible-header" style="background-color:#915537;color:white;font-weight:500;">Les identitaires</div>
+        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.</span></div>
+      </li><li>
+        <div class="collapsible-header" style="background-color:#913773;color:white;font-weight:500;">Les catholiques intégristes</div>
+        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.</span></div>
+      </li><li>
+        <div class="collapsible-header" style="background-color:#647D55;color:white;font-weight:500;">Les complotistes</div>
+        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.</span></div>
+      </li><li>
+        <div class="collapsible-header" style="background-color:#414141;color:white;font-weight:500;">Les autres</div>
+        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.</span></div>
+      </li>
+    </ul>
+  </div>
+
+
+
+<div id="blue" class="block lepenscope-light">
+  <nav class="pushpin-demo-nav" data-target="blue">
+    <div class="nav-wrapper lepenscope">
+      <div class="container">
+        <a href="#" class="logo">Lepenscope</a>
+
+        <ul id="nav-mobile" class="right show-on-large">
+          <li><a href="#" id="reset"><i class="fa fa-arrows-h"></i></a></li>
+          <li><a href="#" data-activates="filters" id="filterbutton"><i class="fa fa-filter"></i></a></li>
+          <li><a href="#" data-activates="legende" id="legendebutton"><i class="material-icons">menu</i></a></li>
+          <li><div class="input-field">
+            <input id="search" type="search" required>
+            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          </div></li>
+        </ul>
+
 
       </div>
     </div>
+  </nav>
+  <div id="cy"></div>
+</div>
+<div id="fiche" class="block lepenscope-light">
+  <div id="fichetitle" class="pushpin-demo-nav" data-target="fiche">
+    <div class="nav-wrapper lepenscope">
+      <div class="container">
+        <div class="row" style="margin-bottom:0px;">
+          <div class="col wlogo">
+            <a href="#" class="logo"><img src="images/logo_BlocIdentitaire.png" style="padding-top:0.75rem;" class="circle responsive-img"> <!-- notice the "circle" class -->
+            </a>
+          </div>
+          <div class="col white-text">
+            <H4>TEST</H4>
+            <span class="resume">TEST</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div style="width:100%;height:1200px;color:blue"></div>
+</div>
 
 
 
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+
+      </div>
+    </div>
   </div>
 
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-155159-12', 'auto');
-    ga('send', 'pageview');
-
-  </script>
-
 </body>
+<footer class="page-footer">
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  
+<script src="https://use.fontawesome.com/6f4c3160b1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+<!--<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.1.2/cytoscape.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/basic/jquery.qtip.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/basic/jquery.qtip.min.css" rel="stylesheet" type="text/css" />
+<script src="js/cytoscape-qtip.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.5.0/bluebird.min.js"></script>
+<!--<script src="bootstrap.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>-->
+<script src="js/typeahead.bundle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+<script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-cose-bilkent/1.6.5/cytoscape-cose-bilkent.js"></script>
+<script src="http://weaver.js.org/api/weaver.js-1.2.0/weaver.min.js"></script>
+<script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-spread/1.3.0/cytoscape-spread.js"></script>"
+<script src="js/lepenscope.js"></script>
+<script>
+(function($) {
+    $.fn.goTo = function() {
+      var offset = $(this).offset(); // Contains .top and .left
+      var bottom = $(window).height()-$(this).height();
+      console.log($(window).scrollTop(),$(this).height());
+      console.log(offset);
+      console.log(bottom);
+      $('html, body').animate({
+        scrollTop: offset.top-bottom,
+      }, 'slow');
+
+        return this; // for chaining...
+    }
+})(jQuery);
+
+</script>
+<script>
+// Pushpin Demo Init
+    if ($('.pushpin-demo-nav').length) {
+      $('.pushpin-demo-nav').each(function() {
+        var $this = $(this);
+        var $target = $('#' + $(this).attr('data-target'));
+        $this.pushpin({
+          top: $target.offset().top,
+          bottom: $target.offset().top + $target.outerHeight() - $this.height()
+        });
+      });
+    }
+    // Initialize collapse button
+    $("#filterbutton").sideNav({'edge': 'right'});
+    $("#legendebutton").sideNav({'edge': 'right'});
+</script>
+
+</footer>
+
 </html>

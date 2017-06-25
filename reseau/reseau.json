@@ -3,425 +3,533 @@
         "nodes": [
             {
                 "data": {
+                    "couleurfiche": "#374682",
                     "cat": "Souverainiste",
+                    "shortId": "louisaliot",
+                    "label": "Louis Aliot",
                     "type": "personne",
                     "id": "Louis Aliot",
-                    "poids": 1,
-                    "label": "Louis Aliot"
+                    "poids": 1
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#913773",
                     "cat": "Int\u00e9griste",
+                    "shortId": "marie-christinearnautu",
+                    "label": "Marie-Christine Arnautu",
                     "type": "personne",
                     "id": "Marie-Christine Arnautu",
-                    "poids": 2,
-                    "label": "Marie-Christine Arnautu"
+                    "poids": 2
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#374682",
                     "cat": "Souverainiste",
+                    "shortId": "nicolasbay",
+                    "label": "Nicolas Bay",
                     "type": "personne",
                     "id": "Nicolas Bay",
-                    "poids": 3,
-                    "label": "Nicolas Bay"
+                    "poids": 3
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#913773",
                     "cat": "Int\u00e9griste",
+                    "shortId": "yvanbenedetti",
+                    "label": "Yvan Benedetti",
                     "type": "personne",
                     "id": "Yvan Benedetti",
-                    "poids": 2,
-                    "label": "Yvan Benedetti"
+                    "poids": 2
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#414141",
                     "cat": null,
+                    "shortId": "brunobilde",
+                    "label": "Bruno Bilde",
                     "type": "personne",
                     "id": "Bruno Bilde",
-                    "poids": 1,
-                    "label": "Bruno Bilde"
+                    "poids": 1
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#915537",
                     "cat": "Identitaire",
+                    "shortId": "jacquesbompard",
+                    "label": "Jacques Bompard",
                     "type": "personne",
                     "id": "Jacques Bompard",
-                    "poids": 3,
-                    "label": "Jacques Bompard"
+                    "poids": 3
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#374682",
                     "cat": "Souverainiste",
+                    "shortId": "steevebriois",
+                    "label": "Steeve Briois",
                     "type": "personne",
                     "id": "Steeve Briois",
-                    "poids": 2,
-                    "label": "Steeve Briois"
+                    "poids": 2
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#915537",
                     "cat": "Identitaire",
+                    "shortId": "fredericchatillon",
+                    "label": "Fr\u00e9d\u00e9ric Chatillon",
                     "type": "personne",
                     "id": "Fr\u00e9d\u00e9ric Chatillon",
-                    "poids": 3,
-                    "label": "Fr\u00e9d\u00e9ric Chatillon"
+                    "poids": 3
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#414141",
                     "cat": null,
+                    "shortId": "sebastienchenu",
+                    "label": "S\u00e9bastien Chenu",
                     "type": "personne",
                     "id": "S\u00e9bastien Chenu",
-                    "poids": 1,
-                    "label": "S\u00e9bastien Chenu"
+                    "poids": 1
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#374682",
                     "cat": "Souverainiste",
+                    "shortId": "gilbertcollard",
+                    "label": "Gilbert Collard",
                     "type": "personne",
                     "id": "Gilbert Collard",
-                    "poids": 2,
-                    "label": "Gilbert Collard"
+                    "poids": 2
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#374682",
                     "cat": "Souverainiste",
+                    "shortId": "nicolasdupont-aignan",
+                    "label": "Nicolas Dupont-Aignan",
                     "type": "personne",
                     "id": "Nicolas Dupont-Aignan",
-                    "poids": 2,
-                    "label": "Nicolas Dupont-Aignan"
+                    "poids": 2
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#414141",
                     "cat": null,
+                    "shortId": "joseevrard",
+                    "label": "Jos\u00e9 Evrard",
                     "type": "personne",
                     "id": "Jos\u00e9 Evrard",
-                    "poids": 1,
-                    "label": "Jos\u00e9 Evrard"
+                    "poids": 1
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#915537",
                     "cat": "Identitaire",
+                    "shortId": "brunogolnisch",
+                    "label": "Bruno Golnisch",
                     "type": "personne",
                     "id": "Bruno Golnisch",
-                    "poids": 2,
-                    "label": "Bruno Golnisch"
+                    "poids": 2
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#915537",
                     "cat": "Identitaire",
+                    "shortId": "jean-francoisjalkh",
+                    "label": "Jean-Fran\u00e7ois Jalkh",
                     "type": "personne",
                     "id": "Jean-Fran\u00e7ois Jalkh",
-                    "poids": 2,
-                    "label": "Jean-Fran\u00e7ois Jalkh"
+                    "poids": 2
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#915537",
                     "cat": "Identitaire",
+                    "shortId": "jean-marielepen",
+                    "label": "Jean-Marie Le Pen",
                     "type": "personne",
                     "id": "Jean-Marie Le Pen",
-                    "poids": 6,
-                    "label": "Jean-Marie Le Pen"
+                    "poids": 6
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#374682",
                     "haspic": 1,
+                    "pic": "images/photo_MarineLePen.png",
+                    "cat": "Souverainiste",
+                    "shortId": "marinelepen",
                     "label": "Marine Le Pen",
                     "type": "personne",
                     "id": "Marine Le Pen",
-                    "poids": 8,
-                    "cat": "Souverainiste"
+                    "poids": 8
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#915537",
                     "haspic": 1,
+                    "pic": "images/photo_MarionMar\u00e9chalLePen.png",
+                    "cat": "Identitaire",
+                    "shortId": "marionmarechal-lepen",
                     "label": "Marion Mar\u00e9chal-Le Pen",
                     "type": "personne",
                     "id": "Marion Mar\u00e9chal-Le Pen",
-                    "poids": 6,
-                    "cat": "Identitaire"
+                    "poids": 6
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#915537",
                     "cat": "Identitaire",
+                    "shortId": "brunomegret",
+                    "label": "Bruno M\u00e9gret",
                     "type": "personne",
                     "id": "Bruno M\u00e9gret",
-                    "poids": 2,
-                    "label": "Bruno M\u00e9gret"
+                    "poids": 2
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#414141",
                     "cat": null,
+                    "shortId": "emmanuellemenard",
+                    "label": "Emmanuelle M\u00e9nard",
                     "type": "personne",
                     "id": "Emmanuelle M\u00e9nard",
-                    "poids": 2,
-                    "label": "Emmanuelle M\u00e9nard"
+                    "poids": 2
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#915537",
                     "cat": "Identitaire",
+                    "shortId": "robertmenard",
+                    "label": "Robert M\u00e9nard",
                     "type": "personne",
                     "id": "Robert M\u00e9nard",
-                    "poids": 5,
-                    "label": "Robert M\u00e9nard"
+                    "poids": 5
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#414141",
                     "cat": null,
+                    "shortId": "ludovicpajot",
+                    "label": "Ludovic Pajot",
                     "type": "personne",
                     "id": "Ludovic Pajot",
-                    "poids": 1,
-                    "label": "Ludovic Pajot"
+                    "poids": 1
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#374682",
                     "cat": "Souverainiste",
+                    "shortId": "florianphilippot",
+                    "label": "Florian Philippot",
                     "type": "personne",
                     "id": "Florian Philippot",
-                    "poids": 4,
-                    "label": "Florian Philippot"
+                    "poids": 4
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#915537",
                     "cat": "Identitaire",
+                    "shortId": "davidrachline",
+                    "label": "David Rachline",
                     "type": "personne",
                     "id": "David Rachline",
-                    "poids": 1,
-                    "label": "David Rachline"
+                    "poids": 1
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#915537",
                     "cat": "Identitaire",
+                    "shortId": "stephaneravier",
+                    "label": "St\u00e9phane Ravier",
                     "type": "personne",
                     "id": "St\u00e9phane Ravier",
-                    "poids": 1,
-                    "label": "St\u00e9phane Ravier"
+                    "poids": 1
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#414141",
                     "cat": null,
+                    "shortId": "walleranddesaint-just",
+                    "label": "Wallerand de Saint-Just",
                     "type": "personne",
                     "id": "Wallerand de Saint-Just",
-                    "poids": 2,
-                    "label": "Wallerand de Saint-Just"
+                    "poids": 2
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#915537",
                     "cat": "Identitaire",
+                    "shortId": "philippevardon",
+                    "label": "Philippe Vardon",
                     "type": "personne",
                     "id": "Philippe Vardon",
-                    "poids": 4,
-                    "label": "Philippe Vardon"
+                    "poids": 4
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#374682",
                     "cat": "Souverainiste",
+                    "shortId": "philippedevilliers",
+                    "label": "Philippe de Villiers",
                     "type": "personne",
                     "id": "Philippe de Villiers",
-                    "poids": 3,
-                    "label": "Philippe de Villiers"
+                    "poids": 3
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#414141",
                     "cat": "Autres",
+                    "shortId": "agenceriwal",
+                    "label": "Agence Riwal",
                     "type": "mouvement",
                     "id": "Agence Riwal",
-                    "poids": 1,
-                    "label": "Agence Riwal"
+                    "poids": 1
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#915537",
                     "haspic": 1,
+                    "pic": "images/logo_BlocIdentitaire.png",
+                    "cat": "Identitaire",
+                    "shortId": "blocidentitaire",
                     "label": "Bloc Identitaire",
                     "type": "mouvement",
                     "id": "Bloc Identitaire",
-                    "poids": 2,
-                    "cat": "Identitaire"
+                    "poids": 2
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#915537",
                     "haspic": 1,
+                    "pic": "images/logo_Comit\u00e9sJeanne,AuSecours!.png",
+                    "cat": "Identitaire",
+                    "shortId": "comites\u00abjeanne,ausecours!\u00bb",
                     "label": "Comit\u00e9s \u00ab Jeanne, au secours ! \u00bb",
                     "type": "mouvement",
                     "id": "Comit\u00e9s \u00ab Jeanne, au secours ! \u00bb",
-                    "poids": 2,
-                    "cat": "Identitaire"
+                    "poids": 2
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#414141",
                     "cat": "Autres",
+                    "shortId": "cotelec",
+                    "label": "Cotelec",
                     "type": "mouvement",
                     "id": "Cotelec",
-                    "poids": 1,
-                    "label": "Cotelec"
+                    "poids": 1
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#374682",
                     "haspic": 1,
+                    "pic": "images/logo_DeboutLaFrance!.png",
+                    "cat": "Souverainiste",
+                    "shortId": "deboutlafrance!",
                     "label": "Debout la France !",
                     "type": "mouvement",
                     "id": "Debout la France !",
-                    "poids": 1,
-                    "cat": "Souverainiste"
+                    "poids": 1
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#374682",
                     "haspic": 1,
+                    "pic": "images/logo_EuropeDesNationsEtDesLibert\u00e9s.png",
+                    "cat": "Souverainiste",
+                    "shortId": "europedesnationsetdeslibertes",
                     "label": "Europe des Nations et des Libert\u00e9s",
                     "type": "mouvement",
                     "id": "Europe des Nations et des Libert\u00e9s",
-                    "poids": 8,
-                    "cat": "Souverainiste"
+                    "poids": 8
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#374682",
                     "haspic": 1,
+                    "pic": "images/logo_FrontNational.png",
+                    "cat": "Souverainiste",
+                    "shortId": "frontnational",
                     "label": "Front National",
                     "type": "mouvement",
                     "id": "Front National",
-                    "poids": 23,
-                    "cat": "Souverainiste"
+                    "poids": 23
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#374682",
                     "haspic": 1,
+                    "pic": "images/logo_FrontNationalJeunesse.png",
+                    "cat": "Souverainiste",
+                    "shortId": "frontnationaljeunesse",
                     "label": "Front National Jeunesse",
                     "type": "mouvement",
                     "id": "Front National Jeunesse",
-                    "poids": 1,
-                    "cat": "Souverainiste"
+                    "poids": 1
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#915537",
                     "haspic": 1,
+                    "pic": "images/logo_GroupeUnionD\u00e9fense.png",
+                    "cat": "Identitaire",
+                    "shortId": "groupeuniondefense",
                     "label": "Groupe Union D\u00e9fense",
                     "type": "mouvement",
                     "id": "Groupe Union D\u00e9fense",
-                    "poids": 3,
-                    "cat": "Identitaire"
+                    "poids": 3
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#915537",
                     "haspic": 1,
+                    "pic": "images/logo_LigueDuSud.png",
+                    "cat": "Identitaire",
+                    "shortId": "liguedusud",
                     "label": "Ligue du Sud",
                     "type": "mouvement",
                     "id": "Ligue du Sud",
-                    "poids": 2,
-                    "cat": "Identitaire"
+                    "poids": 2
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#913773",
                     "haspic": 1,
+                    "pic": "images/logo_LaManifPourTous.png",
+                    "cat": "Int\u00e9griste",
+                    "shortId": "lamanifpourtous",
                     "label": "La Manif Pour Tous",
                     "type": "mouvement",
                     "id": "La Manif Pour Tous",
-                    "poids": 2,
-                    "cat": "Int\u00e9griste"
+                    "poids": 2
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#915537",
                     "haspic": 1,
+                    "pic": "images/logo_MouvementNationalR\u00e9publicain.png",
+                    "cat": "Identitaire",
+                    "shortId": "mouvementnationalrepublicain",
                     "label": "Mouvement National R\u00e9publicain",
                     "type": "mouvement",
                     "id": "Mouvement National R\u00e9publicain",
-                    "poids": 1,
-                    "cat": "Identitaire"
+                    "poids": 1
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#374682",
                     "haspic": 1,
+                    "pic": "images/logo_MouvementPourLaFrance.png",
+                    "cat": "Souverainiste",
+                    "shortId": "mouvementpourlafrance",
                     "label": "Mouvement Pour la France",
                     "type": "mouvement",
                     "id": "Mouvement Pour la France",
-                    "poids": 1,
-                    "cat": "Souverainiste"
+                    "poids": 1
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#915537",
                     "haspic": 1,
+                    "pic": "images/logo_OrdreNouveau.png",
+                    "cat": "Identitaire",
+                    "shortId": "ordrenouveau",
                     "label": "Ordre Nouveau",
                     "type": "mouvement",
                     "id": "Ordre Nouveau",
-                    "poids": 1,
-                    "cat": "Identitaire"
+                    "poids": 1
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#915537",
                     "haspic": 1,
+                    "pic": "images/logo_OzTaDroite!.png",
+                    "cat": "Identitaire",
+                    "shortId": "oztadroite!",
                     "label": "Oz ta droite !",
                     "type": "mouvement",
                     "id": "Oz ta droite !",
-                    "poids": 1,
-                    "cat": "Identitaire"
+                    "poids": 1
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#915537",
                     "haspic": 1,
+                    "pic": "images/logo_PartiNationalisteFran\u00e7ais.png",
+                    "cat": "Identitaire",
+                    "shortId": "partinationalistefrancais",
                     "label": "Parti Nationaliste Fran\u00e7ais",
                     "type": "mouvement",
                     "id": "Parti Nationaliste Fran\u00e7ais",
-                    "poids": 1,
-                    "cat": "Identitaire"
+                    "poids": 1
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#374682",
                     "haspic": 1,
+                    "pic": "images/logo_RassemblementBleuMarine.png",
+                    "cat": "Souverainiste",
+                    "shortId": "rassemblementbleumarine",
                     "label": "Rassemblement Bleu Marine",
                     "type": "mouvement",
                     "id": "Rassemblement Bleu Marine",
-                    "poids": 7,
-                    "cat": "Souverainiste"
+                    "poids": 7
                 }
             },
             {
                 "data": {
+                    "couleurfiche": "#915537",
                     "haspic": 1,
+                    "pic": "images/logo_Souverainet\u00e9Identit\u00e9EtLibert\u00e9s.png",
+                    "cat": "Identitaire",
+                    "shortId": "souverainete,identiteetlibertes",
                     "label": "Souverainet\u00e9, identit\u00e9 et libert\u00e9s",
                     "type": "mouvement",
                     "id": "Souverainet\u00e9, identit\u00e9 et libert\u00e9s",
-                    "poids": 4,
-                    "cat": "Identitaire"
+                    "poids": 4
                 }
             }
         ],

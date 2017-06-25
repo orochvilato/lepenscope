@@ -134,22 +134,27 @@ for lien in wsLien:
 
 categories = []
 nodesimages = []
-
+cat_couleurs = {}
 for leg in wsLegeC:
-    categories.append(dict(id=strip_accents(leg['noms.nomgroupe']),nom=leg['noms.nomgroupe'],couleur=leg['noms.codecouleur']))
+    cat_couleurs[leg['noms.nomgroupe']] = leg['noms.codecouleur']
+    categories.append(dict(id=strip_accents(leg['noms.nomgroupe']),nom=leg['noms.nomgroupe'],couleur=leg['noms.codecouleur'],
+                            libelle=leg['noms.nomcomplet'],desc=leg['description.descgroupe']))
 
 for pers in wsPers:
     idname = getId(pers['intro.nom'])
     node = {'data':
                 {'id':pers['intro.nom'],
+                 'shortId': normalize(pers['intro.nom']),
                  'label':pers['intro.nom'],
                  'type':'personne',
                  'cat':pers['intro.categorie'],
+                 'couleurfiche': cat_couleurs.get(pers['intro.categorie'],couleur_autres),
                  'poids':nodeWeights.get(pers['intro.nom'],0)
                 }}
     pic = findPic(idname)
     if pic:
         node['data'].update({'haspic':1})
+        node['data']['pic'] = 'images/'+pic
         nodesimages.append(dict(id=pers['intro.nom'],image='images/'+pic))
     elements['nodes'].append(node)
 
@@ -157,14 +162,17 @@ for mouv in wsMouv:
     idname = getId(mouv['intro.nom'])
     node = {'data':
                 {'id':mouv['intro.nom'],
+                 'shortId': normalize(mouv['intro.nom']),
                  'label':mouv['intro.nom'],
                  'type':'mouvement',
                  'cat':mouv['intro.categorie'],
+                 'couleurfiche': cat_couleurs.get(mouv['intro.categorie'],couleur_autres),
                  'poids':nodeWeights.get(mouv['intro.nom'],0)
                 }}
     pic = findPic(idname)
     if pic:
         node['data'].update({'haspic':1})
+        node['data']['pic'] = 'images/'+pic
         nodesimages.append(dict(id=mouv['intro.nom'],image='images/'+pic))
 
     elements['nodes'].append(node)
@@ -189,9 +197,9 @@ env = Environment(
     loader=FileSystemLoader('./templates'),
     autoescape=select_autoescape(['html', 'xml'])
 )
+for node in elements['nodes']:
+    open('fiches/%s.html' % node['data']['shortId'],'w').write(env.get_template('fichetmpl.html').render(**node['data']).encode('utf-8'))
+
 open('reseau/reseau.cycss','w').write(env.get_template('reseautmpl.cycss').render(categories=categories,nodesimages=nodesimages).encode('utf-8'))
 open('js/lepenscope.js','w').write(env.get_template('lepenscopetmpl.js').render(categories=categories).encode('utf-8'))
-open('index.html','w').write(env.get_template('indextmpl.html').render(categories=categories).encode('utf-8'))
-open('index2.html','w').write(env.get_template('bmdindextmpl.html').render(categories=categories).encode('utf-8'))
-
-#open('reseau.html','w').write(env.get_template('reseautempl.html').render(nodes=nodes,edges=edges).encode('utf-8'))
+open('index.html','w').write(env.get_template('bmdindextmpl.html').render(categories=categories).encode('utf-8'))
