@@ -239,7 +239,7 @@ $(function(){
     var resetHighlight = function(){
       nhood.removeClass('highlighted');
       cy.batch(function() {
-        nhood.nodes().forEach(function(n) {
+        allEles.nodes().forEach(function(n) {
           n.data('label',n.data('orgLabel'));
         });
       });
