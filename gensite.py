@@ -6,6 +6,7 @@ import os
 
 APIKEY = 'AIzaSyAl3tgYstQjvgM0krud4pz-PxCo-CXK3I0'
 
+
 pics = {}
 
 import unicodedata
@@ -129,17 +130,17 @@ elements = {'nodes':[],'edges':[]}
 
 nodeWeights = {}
 for lien in wsLien:
-    nodeWeights[lien['noms.nom1']] = nodeWeights.get(lien['noms.nom1'],0) + 1
-    nodeWeights[lien['noms.nom2']] = nodeWeights.get(lien['noms.nom2'],0) + 1
-    elements['edges'].append({'data':{'source':lien['noms.nom1'],'target':lien['noms.nom2'],'label':lien['description.desccarte'] or ''}})
+    nodeWeights[lien['intro.nom1']] = nodeWeights.get(lien['intro.nom1'],0) + 1
+    nodeWeights[lien['intro.nom2']] = nodeWeights.get(lien['intro.nom2'],0) + 1
+    elements['edges'].append({'data':{'source':lien['intro.nom1'],'target':lien['intro.nom2'],'label':lien['description.desccarte'] or ''}})
 
 categories = []
 nodesimages = []
 cat_couleurs = {}
 for leg in wsLegeC:
-    cat_couleurs[leg['noms.nomgroupe']] = leg['noms.codecouleur']
-    categories.append(dict(id=strip_accents(leg['noms.nomgroupe']),nom=leg['noms.nomgroupe'],couleur=leg['noms.codecouleur'],
-                            libelle=leg['noms.nomcomplet'],desc=leg['description.descgroupe']))
+    cat_couleurs[leg['intro.nomgroupe']] = leg['intro.codecouleur']
+    categories.append(dict(id=strip_accents(leg['intro.nomgroupe']),nom=leg['intro.nomgroupe'],couleur=leg['intro.codecouleur'],
+                            libelle=leg['intro.nomcomplet'],desc=leg['description.descgroupe']))
 
 for pers in wsPers:
     idname = getId(pers['intro.nom'])

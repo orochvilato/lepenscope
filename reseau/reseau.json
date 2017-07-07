@@ -634,15 +634,15 @@
             {
                 "data": {
                     "source": "Bloc Identitaire",
-                    "target": "Philippe Vardon",
-                    "label": "Cofondateur"
+                    "target": "Jacques Bompard",
+                    "label": ""
                 }
             },
             {
                 "data": {
-                    "source": "Jacques Bompard",
-                    "target": "Bloc Identitaire",
-                    "label": ""
+                    "source": "Bloc Identitaire",
+                    "target": "Philippe Vardon",
+                    "label": "Cofondateur"
                 }
             },
             {

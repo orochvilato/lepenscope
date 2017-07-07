@@ -57,10 +57,19 @@ $(function(){
     }) );
   };
 
-  function highlight( node ){
+  function highlight( elt ){
     var oldNhood = lastHighlighted;
 
-    var nhood = lastHighlighted = node.closedNeighborhood();
+    if (elt.isNode()) {
+      console.log('nodeselect');
+      var nhood = lastHighlighted = elt.closedNeighborhood();
+      var node = elt;
+    } else {
+      console.log('edgeselect');
+      var nhood = lastHighlighted = elt.connectedNodes().union(elt);
+      var node = nhood[0];
+    }
+
     var others = lastUnhighlighted = cy.elements().not( nhood );
 
     var reset = function(){
@@ -202,6 +211,7 @@ $(function(){
 
     cy.stop();
     allNodes.stop();
+    allEdges.stop();
 
     var nhood = lastHighlighted;
     var others = lastUnhighlighted;
@@ -269,13 +279,7 @@ $(function(){
     ;
   }
 
-  function showNodeInfo( node ){
-    $('#info').html( infoTemplate( node.data() ) ).show();
-  }
 
-  function hideNodeInfo(){
-    $('#info').hide();
-  }
 
   function initCy( then ){
     var loading = document.getElementById('loading');
@@ -324,6 +328,7 @@ $(function(){
       autoungrabify: true
     });
     allNodes = cy.nodes();
+    allEdges = cy.edges();
     allEles = cy.elements();
     function layoutready(){
       allNodes.forEach(function( n ){
@@ -351,21 +356,21 @@ $(function(){
       $('#search').blur();
     });
 
-    cy.on('select unselect', 'node', _.debounce( function(e){
-      var node = cy.$('node:selected');
+    cy.on('select unselect','edge,node',  _.debounce( function(e){
+      var elt = cy.$(':selected');
 
-      if( node.nonempty() ){
-        showNodeInfo( node );
+      if( elt.nonempty() ){
 
         Promise.resolve().then(function(){
-          return highlight( node );
+          return highlight( elt );
         });
       } else {
-        hideNodeInfo();
         clear();
       }
 
     }, 100 ) );
+
+
 
   }
 
@@ -428,11 +433,12 @@ $(function(){
 
     cy.batch(function(){
       allNodes.unselect();
+      allEdges.unselect();
 
       n.select();
     });
 
-    showNodeInfo( n );
+
   }).on('keydown keypress keyup change', _.debounce(function(e){
     var thisSearch = $('#search').val();
 
@@ -448,8 +454,9 @@ $(function(){
       clear();
     } else {
       allNodes.unselect();
+      allEdges.unselect();
 
-      hideNodeInfo();
+
 
       cy.stop();
 
